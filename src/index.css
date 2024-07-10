@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Benzin";
+    src: url(./assets/Benzin-Semibold.ttf);
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url(./assets/SpaceGrotesk-VariableFont_wght.ttf);
+}

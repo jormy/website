@@ -1,20 +1,21 @@
-import Navbar from "./Navbar"
-import Header from "./Header"
-import Links from "./Links"
-import ProjectCard from "./ProjectCard"
-import Footer from "./Footer"
+import Navbar from "./components/Navbar"
+import Header from "./components/Header"
+import Links from "./components/Links"
+import ProjectCard from "./components/ProjectCard"
+import Footer from "./components/Footer"
 
+// TODO: add a fade out linear gradient in front of grid pattern
 function App() {
-
-
   return (
     <>
-      <div id="wrapper" className="mx-auto max-w-4xl py-10 px-5 font-body">
-        <Navbar />
-        <div className="mx-auto max-w-3xl space-y-12 md:py-24">
-          <Header />
-          <Links />
-              <div className="grid grid-cols-2 gap-3">
+      <div className="min-h-screen bg-midnight absolute inset-0 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px]"> 
+        
+        <div id="wrapper" className="mx-auto max-w-4xl py-10 px-8 font-body">
+          <Navbar />
+          <div className="mx-auto max-w-3xl py-24">
+            <Header />
+            <Links />
+              <div className="grid grid-cols-2 gap-4">
                 <ProjectCard 
                   name="website-v2" 
                   descr="My attempt at remaking my website using react and vite" 
@@ -24,12 +25,13 @@ function App() {
                   name="old-website" 
                   descr="My first site ever (as you can probably tell from the code)" 
                   link="https://github.com/jormy/jormy.github.io"/>
-                  
+                    
                 <ProjectCard/>
                 <ProjectCard/>
               </div>
             </div>
           <Footer />
+        </div>
       </div>
     </>
   )

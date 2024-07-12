@@ -4,7 +4,7 @@ export default {
   theme: {
     colors: {
       "blue-main": "#C8DEFF",
-      "blue-body": "#748BAD",
+      "blue-body": "#809bc3",
       midnight: "#070E1C",
     },
     extend: {

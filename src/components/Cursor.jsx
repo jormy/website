@@ -27,11 +27,9 @@ export const Cursor = () => {
             cursorRef.current.style.transform += ' scale(1.75)';
         };
 
-        //unintended: Cursor size stacks if you spam click. just pretend it's a feature
-
         const handleMouseUp = () => {
             setIsMouseDown(false);
-            cursorRef.current.style.transform = cursorRef.current.style.transform.replace(' scale(1.25)', '');
+            cursorRef.current.style.transform = cursorRef.current.style.transform.replace(' scale(1.75)', '');
         };
 
         document.addEventListener('mousemove', handleMouseMove);

@@ -5,6 +5,7 @@ export default {
     colors: {
       "blue-main": "#C8DEFF",
       "blue-body": "#809bc3",
+      "blue-light": "#bfd9ff",
       midnight: "#070E1C",
     },
     extend: {

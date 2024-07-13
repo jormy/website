@@ -15,3 +15,12 @@
 .cursor-transitions {
 	transition: transform 0.3s cubic-bezier(.37, .88, .88, 1.01), opacity 0.3s ease;
 }
+
+.tooltip {
+    @apply invisible absolute;
+  }
+  
+  .has-tooltip:hover .tooltip {
+    @apply visible z-50
+  }
+  

@@ -4,6 +4,7 @@ import Links from "./components/Links"
 import ProjectCard from "./components/ProjectCard"
 import Footer from "./components/Footer"
 import Cursor from "./components/Cursor"
+import Tooltip from "./components/Tooltip"
 
 // TODO: add a fade out linear gradient in front of grid pattern
 function App() {
@@ -20,7 +21,7 @@ function App() {
               <div className="grid grid-cols-2 gap-4">
                 <ProjectCard 
                   name="website-v2" 
-                  descr="My attempt at remaking my website using react and vite" 
+                  descr="attempt at creating a website using reactjs. I hate js so idk why i did this" 
                   link="https://github.com/jormy/website-v2"/>
 
                 <ProjectCard 
@@ -28,8 +29,15 @@ function App() {
                   descr="My first site ever (as you can probably tell from the code)" 
                   link="https://github.com/jormy/jormy.github.io"/>
                     
-                <ProjectCard/>
-                <ProjectCard/>
+                <ProjectCard 
+                  name="future-project" 
+                  descr="ill add more projects here as i make them" 
+                  link="https://github.com/jormy"/>
+
+                <ProjectCard 
+                  name="future-project" 
+                  descr="i swear ill do something soon i promise" 
+                  link="https://github.com/jormy"/>
               </div>
             </div>
           <Footer />

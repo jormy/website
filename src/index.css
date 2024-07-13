@@ -12,7 +12,6 @@
     src: url(./assets/SpaceGrotesk-VariableFont_wght.ttf);
 }
 
-.cursor-transtions {
-	transition: transform 0.3s;
-    transition-timing-function: cubic-bezier(.37,.88,.88,1.01);
+.cursor-transitions {
+	transition: transform 0.3s cubic-bezier(.37, .88, .88, 1.01), opacity 0.3s ease;
 }

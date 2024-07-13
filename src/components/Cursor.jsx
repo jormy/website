@@ -10,7 +10,7 @@ export const Cursor = () => {
         cursorRef.current.style.opacity = '1';
         timeout = setTimeout(() => {
             cursorRef.current.style.opacity = '0';
-        }, 1000);
+        }, 800);
     };
 
     useEffect(() => {

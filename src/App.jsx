@@ -4,7 +4,6 @@ import Links from "./components/Links"
 import ProjectCard from "./components/ProjectCard"
 import Footer from "./components/Footer"
 import Cursor from "./components/Cursor"
-import Tooltip from "./components/Tooltip"
 
 // TODO: add a fade out linear gradient in front of grid pattern
 function App() {

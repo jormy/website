@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Tooltip from './Tooltip'
 
 function Links() {
     return (
-        <>  <div className='text-blue-body text-3xl space-x-2 mt-3 mb-10'>
+        <>  <div className="flex gap-5 text-blue-link text-2xl space-x-2 mt-3 mb-10">
                 <a href="https://github.com/jormy" 
                     target="_blank" 
-                    className="has-tooltip pr-3 hover:text-blue-light transition-colors">
+                    className="has-tooltip hover:text-blue-light transition-colors">
                         <Tooltip text="@jormy" />
                         <FontAwesomeIcon icon={faGithub} 
                     />
@@ -19,6 +21,20 @@ function Links() {
                     className="has-tooltip hover:text-blue-light transition-colors">
                         <Tooltip text="@jormers" />
                         <FontAwesomeIcon icon={faDiscord} 
+                    />
+                </a>
+                <a href="https://twitter.com/sirjorm" 
+                    target="_blank" 
+                    className="has-tooltip hover:text-blue-light transition-colors">
+                        <Tooltip text="@sirjorm" />
+                        <FontAwesomeIcon icon={faTwitter} 
+                    />
+                </a>
+                <a href="#" 
+                    target="_blank" 
+                    className="has-tooltip hover:text-blue-light transition-colors">
+                        <Tooltip text="contact" />
+                        <FontAwesomeIcon icon={faEnvelope} 
                     />
                 </a>
                 

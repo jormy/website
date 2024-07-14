@@ -1,10 +1,18 @@
+import Links from "./Links"
+import Pfp from "./Pfp"
 
 function Header() {
     return (
         <>
-            <h1 className="text-blue-main font-header text-8xl font-bold">jorm</h1>
-            <p className="text-blue-body text-xl py-3 max-w-96  mt-5">rookie dev, currently struggling to program
-            this website.</p>
+            <div className="flex justify-between mb-20">
+                <div>
+                    <h1 className="text-blue-main font-header text-8xl font-bold">jorm</h1>
+                    <p className="text-blue-body text-2xl py-3 max-w-96  mt-5">rookie dev, currently struggling to program
+                    this website.</p>
+                    <Links />
+                </div>
+                <Pfp />
+            </div>
         </>
     )
 }

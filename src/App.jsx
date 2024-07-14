@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar"
 import Header from "./components/Header"
-import Links from "./components/Links"
 import ProjectCard from "./components/ProjectCard"
 import Footer from "./components/Footer"
 import Cursor from "./components/Cursor"
@@ -16,7 +15,6 @@ function App() {
           <Navbar />
           <div className="mx-auto max-w-3xl py-24">
             <Header />
-            <Links />
               <div className="grid grid-cols-2 gap-4">
                 <ProjectCard 
                   name="website-v2" 

@@ -10,7 +10,7 @@ export const Cursor = () => {
         cursorRef.current.style.opacity = '1';
         timeout = setTimeout(() => {
             cursorRef.current.style.opacity = '0';
-        }, 800);
+        }, 300);
     };
 
     useEffect(() => {
@@ -24,12 +24,12 @@ export const Cursor = () => {
 
         const handleMouseDown = () => {
             setIsMouseDown(true);
-            cursorRef.current.style.transform += ' scale(1.75)';
+            cursorRef.current.style.transform += ' scale(2)';
         };
 
         const handleMouseUp = () => {
             setIsMouseDown(false);
-            cursorRef.current.style.transform = cursorRef.current.style.transform.replace(' scale(1.75)', '');
+            cursorRef.current.style.transform = cursorRef.current.style.transform.replace(' scale(2)', '');
         };
 
         document.addEventListener('mousemove', handleMouseMove);

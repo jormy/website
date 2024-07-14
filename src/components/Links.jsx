@@ -7,10 +7,10 @@ import Tooltip from './Tooltip'
 
 function Links() {
     return (
-        <>  <div className="flex gap-5 text-blue-link text-2xl space-x-2 mt-3 mb-10">
+        <>  <div className="flex gap-5 text-2xl space-x-2 mt-3 mb-10">
                 <a href="https://github.com/jormy" 
                     target="_blank" 
-                    className="has-tooltip hover:text-blue-light transition-colors">
+                    className="has-tooltip hover:text-denim-200 transition-colors">
                         <Tooltip text="@jormy" />
                         <FontAwesomeIcon icon={faGithub} 
                     />
@@ -18,21 +18,21 @@ function Links() {
 
                 <a href="https://discordapp.com/users/743010360340250725" 
                     target="_blank" 
-                    className="has-tooltip hover:text-blue-light transition-colors">
+                    className="has-tooltip hover:text-denim-200 transition-colors">
                         <Tooltip text="@jormers" />
                         <FontAwesomeIcon icon={faDiscord} 
                     />
                 </a>
                 <a href="https://twitter.com/sirjorm" 
                     target="_blank" 
-                    className="has-tooltip hover:text-blue-light transition-colors">
+                    className="has-tooltip hover:text-denim-200 transition-colors">
                         <Tooltip text="@sirjorm" />
                         <FontAwesomeIcon icon={faTwitter} 
                     />
                 </a>
                 <a href="#" 
                     target="_blank" 
-                    className="has-tooltip hover:text-blue-light transition-colors">
+                    className="has-tooltip hover:text-denim-200 transition-colors">
                         <Tooltip text="contact" />
                         <FontAwesomeIcon icon={faEnvelope} 
                     />

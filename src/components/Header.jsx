@@ -7,11 +7,11 @@ function Header() {
         <>
             <div className="flex justify-between mb-20">
                 <div>
-                    <h1 className="text-blue-main font-header text-8xl font-bold w-min relative">
+                    <h1 className="text-denim-200 font-header text-8xl font-bold w-min relative">
                         jorm
                         <Discord />
                     </h1>
-                    <p className="text-blue-body text-2xl py-3 max-w-96  mt-5">rookie dev, currently struggling to program
+                    <p className="text-2xl py-3 max-w-96  mt-5">rookie dev, currently struggling to program
                     this website.</p>
                     <Links />
                 </div>

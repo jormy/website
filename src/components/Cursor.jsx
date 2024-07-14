@@ -46,7 +46,7 @@ export const Cursor = () => {
 
     return (
         <div
-            className="left-0 top-0 w-7 h-7 border-solid border-[1px] rounded-full border-blue-body fixed z-50 pointer-events-none cursor-transitions"
+            className="left-0 top-0 w-7 h-7 border-solid border-[1px] rounded-full border-denim-300 fixed z-50 pointer-events-none cursor-transitions"
             ref={cursorRef}
             style={{ opacity: 1 }}
         ></div>

@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: "Benzin";
-    src: url(./assets/Benzin-Semibold.ttf);
+    src: url(./assets/fonts/Benzin-Semibold.ttf);
 }
 
 @font-face {
     font-family: "Space Grotesk";
-    src: url(./assets/SpaceGrotesk-VariableFont_wght.ttf);
+    src: url(./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
 }
 
 .cursor-transitions {

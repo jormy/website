@@ -1,5 +1,4 @@
 import { useLanyard } from "react-use-lanyard";
-import dnd from "../assets/discord/dnd.svg";
 
 const USER_ID = "743010360340250725";
 
@@ -30,7 +29,6 @@ export default function Discord() {
     return (
         <>
             <div className={`w-5 h-5 bottom-[-3px] right-[-10px] ring-[6px] ring-denim-950 absolute rounded-full ${getStatusColor(lanyard?.discord_status)} cursor-pointer`}></div>
-            {/* <img src={dnd} /> */}
         </>
     );
 }

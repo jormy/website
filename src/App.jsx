@@ -1,47 +1,32 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Projects from "./pages/Projects"
+import Contact from "./pages/Contact"
+import Error from "./pages/Error"
 import Navbar from "./components/Navbar"
-import Header from "./components/Header"
-import ProjectCard from "./components/ProjectCard"
-import Footer from "./components/Footer"
 import Cursor from "./components/Cursor"
+import Footer from "./components/Footer"
 
-// TODO: add a fade out linear gradient in front of grid pattern
 function App() {
-  return (
-    <>
-      <Cursor />
-      <div className="min-h-screen bg-denim-950 absolute inset-0 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px]"> 
-        
-        <div id="wrapper" className="mx-auto max-w-4xl py-10 px-8 font-body text-denim-300">
-          <Navbar />
-          <div className="mx-auto max-w-3xl py-24">
-            <Header />
-              <div className="grid grid-cols-2 gap-4">
-                <ProjectCard 
-                  name="website-v2" 
-                  descr="attempt at creating a website using reactjs. I hate js so idk why i did this" 
-                  link="https://github.com/jormy/website-v2"/>
-
-                <ProjectCard 
-                  name="old-website" 
-                  descr="My first site ever (as you can probably tell from the code)" 
-                  link="https://github.com/jormy/jormy.github.io"/>
-                    
-                <ProjectCard 
-                  name="future-project" 
-                  descr="ill add more projects here as i make them" 
-                  link="https://github.com/jormy"/>
-
-                <ProjectCard 
-                  name="future-project" 
-                  descr="i swear ill do something soon i promise" 
-                  link="https://github.com/jormy"/>
-              </div>
-            </div>
-          <Footer />
-        </div>
-      </div>
-    </>
-  )
+    return (
+        <>
+            <Router> 
+                <Cursor />
+                <div className="min-h-screen bg-denim-950 absolute inset-0 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px]"> 
+                    <div id="wrapper" className="mx-auto max-w-4xl py-10 px-8 font-body text-denim-300">
+                        <Navbar />
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="*" element={<Error />} />
+                        </Routes>
+                        <Footer />
+                    </div>
+                </div>
+            </Router>
+        </>
+    )
 }
 
 export default App

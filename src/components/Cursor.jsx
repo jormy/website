@@ -18,18 +18,18 @@ export const Cursor = () => {
             const { clientX, clientY } = e;
             const mouseX = clientX - cursorRef.current.clientWidth / 2;
             const mouseY = clientY - cursorRef.current.clientHeight / 2;
-            cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(${isMouseDown ? 1.25 : 1})`;
+            cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(${isMouseDown ? 1.75 : 1})`;
             resetOpacity();
         };
 
         const handleMouseDown = () => {
             setIsMouseDown(true);
-            cursorRef.current.style.transform += ' scale(2)';
+            cursorRef.current.style.transform += ' scale(1.75)';
         };
 
         const handleMouseUp = () => {
             setIsMouseDown(false);
-            cursorRef.current.style.transform = cursorRef.current.style.transform.replace(' scale(2)', '');
+            cursorRef.current.style.transform = cursorRef.current.style.transform.replace(' scale(1.75)', '');
         };
 
         document.addEventListener('mousemove', handleMouseMove);

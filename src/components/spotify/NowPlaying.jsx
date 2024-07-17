@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
+import TruncateString from "../../components/spotify/TruncateString"
 import visualiser from "../../assets/visualiser.gif";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -59,7 +60,7 @@ export const NowPlaying = (props) => {
                         <div className="pl-3">
                             <div className="flex relative">
                                 <a href={result.songUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-denim-200 text-md pr-6 flex gap-3">
-                                    {result.title}
+                                    {TruncateString(result.title, 40)}
                                     <img src={visualiser} className="h-[1em] w-[1-em]"/>
                                 </a>
                             </div>

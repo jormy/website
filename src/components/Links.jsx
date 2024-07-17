@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
@@ -30,13 +31,11 @@ function Links() {
                         <FontAwesomeIcon icon={faTwitter} 
                     />
                 </a>
-                <a href="#" 
-                    target="_blank" 
-                    className="has-tooltip hover:text-denim-200 transition-colors">
+                <Link to="/contact" className="has-tooltip hover:text-denim-200 transition-colors">
                         <Tooltip text="contact" />
                         <FontAwesomeIcon icon={faEnvelope} 
                     />
-                </a>
+                </Link> 
                 
             </div>
         </>

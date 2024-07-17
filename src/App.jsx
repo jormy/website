@@ -13,16 +13,18 @@ function App() {
             <Router> 
                 <Cursor />
                 <div className="min-h-screen bg-denim-950 absolute inset-0 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px]"> 
-                    <div id="wrapper" className="mx-auto max-w-4xl py-10 px-8 font-body text-denim-300">
-                        <Navbar />
-                        <div className="mx-auto max-w-3xl py-24">
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/projects" element={<Projects />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="*" element={<Error />} />
-                        </Routes>
-                        <Footer />
+                    <div className="min-h-screen bg-gradient-to-t from-denim-950 via-transparent">
+                        <div id="wrapper" className="mx-auto max-w-4xl py-10 px-8 font-body text-denim-300">
+                            <Navbar />
+                            <div className="mx-auto max-w-3xl py-24">
+                                <Routes>
+                                    <Route path="/" element={<Home />} />
+                                    <Route path="/projects" element={<Projects />} />
+                                    <Route path="/contact" element={<Contact />} />
+                                    <Route path="*" element={<Error />} />
+                                </Routes>
+                                <Footer />
+                            </div>
                         </div>
                     </div>
                 </div>

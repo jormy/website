@@ -15,6 +15,7 @@ function Header() {
                     this website.</p>
                     <Links />
                 </div>
+                {/* TODO: make the pfp disappear on mobile devices */}
                 <Pfp />
             </div>
         </>

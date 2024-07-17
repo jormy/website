@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import NowPlaying from "./spotify/NowPlaying"
 
 const Navbar = () => {
     return (
@@ -10,7 +9,6 @@ const Navbar = () => {
                     <Link to="/projects">projects</Link>
                     <Link to="/contact">contact</Link>
                 </nav>
-                <NowPlaying />
             </div>
         </>
 

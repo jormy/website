@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
 import visualiser from "../../assets/visualiser.gif";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const POLLING_INTERVAL = 5000; // fetch song every 5 seconds
 
@@ -39,16 +41,16 @@ export const NowPlaying = (props) => {
     }, [props.client_id, props.client_secret, props.refresh_token]);
 
     return (
-        <div>
+        <div className="flex w-fit text-denim-300">
             {loading && <p>Loading...</p>}
             {!loading && !result.isPlaying && (
-                <div>
-                    <span>Currently offline</span>
-                </div>
+                <>
+                    <FontAwesomeIcon icon={faSpotify} className="w-12 h-12"/>
+                    <span className="pl-3 text-md">Not playing <br/> anything</span>
+                </>
             )}
             {!loading && result.isPlaying && (
-                <div className="flex w-fit border-denim-300/[0.5] bg-denim-300/[0.07] text-denim-300 backdrop-blur-sm border border-1 rounded-xl">
-                    <div className="p-3 flex">
+                    <>
                         <img 
                             src={result.albumImageUrl} 
                             alt={`${result.title} album cover`} 
@@ -56,18 +58,19 @@ export const NowPlaying = (props) => {
                         />
                         <div className="pl-3">
                             <div className="flex relative">
-                                <a href={result.songUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-denim-200 text-md pr-6">
+                                <a href={result.songUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-denim-200 text-md pr-6 flex gap-3">
                                     {result.title}
+                                    <img src={visualiser} className="h-[1em] w-[1-em]"/>
                                 </a>
-                                <img src={visualiser} className="h-[1em] w-[1-em] absolute bottom-1 right-0"/>
                             </div>
                             <p>{result.artist}</p>
                         </div>
-                    </div>
-                </div>
+                    </>
             )}
         </div>
     );
 };
+
+//IMPORTANT: MAKE THE VERCEL ENV VARIBALES WORK
 
 export default NowPlaying;

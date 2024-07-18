@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <Header />
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <ProjectCard 
           name="website-v2" 
           descr="attempt at creating a website using reactjs. I hate js so idk why i did this" 

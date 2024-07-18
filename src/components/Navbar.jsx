@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
+import NowPlaying from "../components/spotify/NowPlaying"
 
+//TODO: replace links with hamburger menu for mobile
 const Navbar = () => {
     return (
         <>
@@ -9,6 +11,7 @@ const Navbar = () => {
                     <Link to="/projects">projects</Link>
                     <Link to="/contact">contact</Link>
                 </nav>
+                <NowPlaying />
             </div>
         </>
 

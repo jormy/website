@@ -8,7 +8,7 @@ import Tooltip from './Tooltip'
 
 function Links() {
     return (
-        <>  <div className="flex gap-5 text-2xl space-x-2 mt-3 mb-10">
+        <>  <div className="flex gap-5 text-2xl space-x-2 mt-3">
                 <a href="https://github.com/jormy" 
                     target="_blank" 
                     className="has-tooltip hover:text-denim-200 transition-colors">

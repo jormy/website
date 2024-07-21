@@ -7,7 +7,7 @@ const client_id = import.meta.env.VITE_CLIENT_ID;
 const client_secret = import.meta.env.VITE_CLIENT_SECRET;
 const refresh_token = import.meta.env.VITE_REFRESH_TOKEN;
 
-const getAccessToken = async () => {
+export const getAccessToken = async () => {
   const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
   const response = await fetch(TOKEN_ENDPOINT, {
@@ -22,16 +22,13 @@ const getAccessToken = async () => {
     }),
   });
 
-  return response.json();
+  const data = await response.json();
+  data.expiry_time = Date.now() + data.expires_in * 1000; // Calculate expiry time
+
+  return data;
 };
 
-export const getNowPlaying = async (client_id, client_secret, refresh_token) => {
-  const { access_token } = await getAccessToken(
-    client_id,
-    client_secret,
-    refresh_token
-  );
-
+export const getNowPlaying = async (access_token) => {
   return fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -39,12 +36,8 @@ export const getNowPlaying = async (client_id, client_secret, refresh_token) => 
   });
 };
 
-export default async function getNowPlayingItem(
-  client_id,
-  client_secret,
-  refresh_token
-) {
-  const response = await getNowPlaying(client_id, client_secret, refresh_token);
+export default async function getNowPlayingItem(access_token) {
+  const response = await getNowPlaying(access_token);
   if (response.status === 204 || response.status > 400) {
     return false;
   }

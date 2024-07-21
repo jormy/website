@@ -3,7 +3,7 @@ import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 import Error from "./pages/Error"
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar/Navbar"
 import Cursor from "./components/Cursor"
 import Footer from "./components/Footer"
 

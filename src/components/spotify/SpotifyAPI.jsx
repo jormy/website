@@ -1,4 +1,4 @@
-const SPOTIFY_ENDPOINT = `http://jorm-server.vercel.app/spotify`;
+const SPOTIFY_ENDPOINT = `/api/spotify`;
 
 export default async function getNowPlayingItem() {
   try {

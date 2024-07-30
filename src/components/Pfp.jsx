@@ -1,4 +1,4 @@
-import pfp from "../assets/pfp.png";
+import pfp from "../images/pfp.png";
 import { useRef } from "react";
 
 const Pfp = () => {

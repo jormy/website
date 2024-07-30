@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
 import TruncateString from "../../components/spotify/TruncateString";
-import visualiser from "../../assets/visualiser.gif";
+import visualiser from "../../images/visualiser.gif";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

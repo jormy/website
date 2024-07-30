@@ -1,4 +1,4 @@
-const SPOTIFY_ENDPOINT = `http://website-v2-server.vercel.app`;
+const SPOTIFY_ENDPOINT = `https://website-v2-server.vercel.app`;
 
 export default async function getNowPlayingItem() {
   try {

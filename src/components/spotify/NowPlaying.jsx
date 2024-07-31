@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
 import TruncateString from "../../components/spotify/TruncateString";
 import visualiser from "../../images/visualiser.gif";
-import { faSpotify } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaSpotify } from "react-icons/fa";
 
 const POLLING_INTERVAL = 10000; // fetch song every 10 seconds
 
@@ -42,7 +41,7 @@ export const NowPlaying = (props) => {
       {loading && <p>Loading...</p>}
       {!loading && !result.isPlaying && (
         <>
-          <FontAwesomeIcon icon={faSpotify} className="w-12 h-12" />
+          <FaSpotify className="w-12 h-12" />
           <span className="pl-3 text-md">
             Not playing <br /> anything
           </span>

@@ -5,7 +5,7 @@ export default async function getNowPlayingItem() {
     const response = await fetch(SPOTIFY_ENDPOINT);
 
     if (response.status === 204 || response.status > 400) {
-      return false;
+      return { isPlaying: false };
     }
 
     const song = await response.json();
@@ -19,6 +19,6 @@ export default async function getNowPlayingItem() {
     };
   } catch (error) {
     console.error("Error fetching the song information:", error);
-    return false;
+    return { isPlaying: false };
   }
 }

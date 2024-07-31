@@ -9,19 +9,19 @@ const POLLING_INTERVAL = 10000; // fetch song every 10 seconds
 
 export const NowPlaying = (props) => {
   const [loading, setLoading] = useState(true);
-  const [result, setResult] = useState({});
+  const [result, setResult] = useState({ isPlaying: false });
   const [prevSong, setPrevSong] = useState({});
 
   const fetchNowPlaying = async () => {
     const nowPlaying = await getNowPlayingItem();
 
-    // Update the state only if the song has changed
-    if (nowPlaying && nowPlaying.songUrl !== prevSong.songUrl) {
+    // Update the state only if the song has changed or nothing is playing
+    if (nowPlaying.isPlaying && nowPlaying.songUrl !== prevSong.songUrl) {
       setResult(nowPlaying);
       setPrevSong(nowPlaying);
       setLoading(false);
-    } else if (!nowPlaying) {
-      setResult({});
+    } else if (!nowPlaying.isPlaying) {
+      setResult({ isPlaying: false });
       setPrevSong({});
       setLoading(false);
     }

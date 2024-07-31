@@ -25,3 +25,7 @@
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
+
+.active {
+  @apply text-denim-200 transition ease-in;
+}

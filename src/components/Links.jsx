@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { TbBrandGithub } from "react-icons/tb";
+import { RiDiscordLine } from "react-icons/ri";
+import { TbBrandTwitter } from "react-icons/tb";
+import { TbMail } from "react-icons/tb";
 import Tooltip from "./Tooltip";
 
 function Links() {
   return (
     <>
-      {" "}
       <div className="flex gap-5 text-2xl space-x-2 mt-3">
         <a
           href="https://github.com/jormy"
@@ -17,7 +15,7 @@ function Links() {
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="@jormy" />
-          <FontAwesomeIcon icon={faGithub} />
+          <TbBrandGithub />
         </a>
 
         <a
@@ -26,7 +24,7 @@ function Links() {
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="@jormers" />
-          <FontAwesomeIcon icon={faDiscord} />
+          <RiDiscordLine />
         </a>
         <a
           href="https://twitter.com/sirjorm"
@@ -34,14 +32,14 @@ function Links() {
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="@sirjorm" />
-          <FontAwesomeIcon icon={faTwitter} />
+          <TbBrandTwitter />
         </a>
         <Link
           to="/contact"
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="contact" />
-          <FontAwesomeIcon icon={faEnvelope} />
+          <TbMail />
         </Link>
       </div>
     </>

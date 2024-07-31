@@ -1,5 +1,5 @@
-import Header from "../components/Header"
-import Projects from "../components/Projects"
+import Header from "../components/hero/Header";
+import Projects from "../components/projects/Projects";
 
 // TODO: add a fade out linear gradient in front of grid pattern
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
       <Header />
       <Projects />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

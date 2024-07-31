@@ -1,4 +1,4 @@
-import Links from "../Links";
+import Links from "../links/Links";
 import Pfp from "./Pfp";
 import Discord from "./Discord";
 

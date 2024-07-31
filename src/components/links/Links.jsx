@@ -30,7 +30,8 @@ function Links() {
           to="/contact"
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
-          <SocialLink tooltip="contact" icon={<IoMail />} />
+          <Tooltip text="contact" />
+          <IoMail />
         </Link>
       </div>
     </>

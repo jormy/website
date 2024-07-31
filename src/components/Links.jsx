@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { TbBrandGithub } from "react-icons/tb";
-import { RiDiscordLine } from "react-icons/ri";
-import { TbBrandTwitter } from "react-icons/tb";
-import { TbMail } from "react-icons/tb";
+import { TbBrandGithubFilled } from "react-icons/tb";
+import { FaDiscord } from "react-icons/fa";
+import { TbBrandTwitterFilled } from "react-icons/tb";
+import { IoMail } from "react-icons/io5";
 import Tooltip from "./Tooltip";
 
 function Links() {
@@ -15,7 +15,7 @@ function Links() {
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="@jormy" />
-          <TbBrandGithub />
+          <TbBrandGithubFilled />
         </a>
 
         <a
@@ -24,7 +24,7 @@ function Links() {
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="@jormers" />
-          <RiDiscordLine />
+          <FaDiscord />
         </a>
         <a
           href="https://twitter.com/sirjorm"
@@ -32,14 +32,14 @@ function Links() {
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="@sirjorm" />
-          <TbBrandTwitter />
+          <TbBrandTwitterFilled />
         </a>
         <Link
           to="/contact"
           className="has-tooltip hover:text-denim-200 transition-colors"
         >
           <Tooltip text="contact" />
-          <TbMail />
+          <IoMail />
         </Link>
       </div>
     </>

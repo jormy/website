@@ -5,10 +5,10 @@ function ProjectCard(props) {
     <a
       href={props.link}
       target="_blank"
-      className="border-denim-300/[0.5] bg-denim-300/[0.05] text-denim-300 backdrop-blur-sm border border-1 rounded-lg p-4 h-32 max-w-auto hover:-translate-y-[2px] transition ease-in hover:bg-denim-300/[0.1]"
+      className="border-1 max-w-auto h-32 rounded-lg border border-denim-300/[0.5] bg-denim-300/[0.05] p-4 text-denim-300 backdrop-blur-sm transition ease-in hover:-translate-y-[2px] hover:bg-denim-300/[0.1]"
     >
       <FaArrowUpRightFromSquare className="float-end" />
-      <h2 className="text-denim-200 font-bold mb-1">{props.name}</h2>
+      <h2 className="mb-1 font-bold text-denim-200">{props.name}</h2>
       <p>{props.descr}</p>
     </a>
   );

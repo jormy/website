@@ -25,16 +25,16 @@ function Projects() {
 
   return (
     <>
-      <div className="flex items-center mb-2">
+      <div className="mb-2 flex items-center">
         <Link
           to="/projects"
-          className="hover:text-denim-200 ease-in-out duration-200"
+          className="duration-200 ease-in-out hover:text-denim-200"
         >
           See more
         </Link>
-        <div className="ml-3 border-b-[1px] flex-grow border-denim-300/[0.5]"></div>
+        <div className="ml-3 flex-grow border-b-[1px] border-denim-300/[0.5]"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard
             key={project.name}

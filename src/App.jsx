@@ -12,14 +12,14 @@ function App() {
     <>
       <Router>
         <Cursor />
-        <div className="min-h-screen bg-denim-950 absolute inset-0 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px] overflow-auto">
+        <div className="absolute inset-0 min-h-screen overflow-auto bg-denim-950 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px]">
           <div className="min-h-screen bg-gradient-to-t from-denim-950 via-transparent">
             <div
               id="wrapper"
-              className="mx-auto max-w-4xl py-10 px-8 font-body text-denim-300 min-h-screen  flex flex-col"
+              className="mx-auto flex min-h-screen max-w-4xl flex-col px-8 py-10 font-body text-denim-300"
             >
               <Navbar />
-              <div className="py-16 sm:py-24 flex-grow">
+              <div className="flex-grow py-16 sm:py-24">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/projects" element={<Projects />} />

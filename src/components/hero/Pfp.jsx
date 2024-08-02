@@ -27,7 +27,7 @@ const Pfp = () => {
           e.currentTarget.style.setProperty("--xRotation", `${yRotation}deg`); //3d rotation is weird af man
           e.currentTarget.style.setProperty("--yRotation", `${xRotation}deg`);
         }}
-        className="w-72 h-72 rounded-2xl transition-transform ease-out hover:[transform:rotateX(var(--xRotation))_rotateY(var(--yRotation))_scale(1.05)] hidden md:block"
+        className="hidden h-72 w-72 rounded-2xl transition-transform ease-out hover:[transform:rotateX(var(--xRotation))_rotateY(var(--yRotation))_scale(1.05)] md:block"
       />
     </div>
   );

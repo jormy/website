@@ -6,8 +6,8 @@ import NavLinkWrapper from "./NavLinkWrapper";
 const Navbar = () => {
   return (
     <>
-      <div className="flex justify-between max-w-4xl ">
-        <nav className="flex-1 flex gap-5 text-denim-300 text-lg">
+      <div className="flex max-w-4xl justify-between">
+        <nav className="flex flex-1 gap-5 text-lg text-denim-300">
           <NavLink to="/">
             <NavLinkWrapper title="/" />
           </NavLink>

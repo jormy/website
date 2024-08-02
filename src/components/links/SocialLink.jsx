@@ -5,7 +5,7 @@ export default function SocialLink(props) {
     <a
       href={props.link}
       target="_blank"
-      className="has-tooltip hover:text-denim-200 transition-colors"
+      className="group transition-colors hover:text-denim-200"
     >
       <Tooltip text={props.tooltip} />
       {props.icon}

@@ -9,7 +9,7 @@ import Tooltip from "../Tooltip";
 function Links() {
   return (
     <>
-      <div className="flex gap-5 text-2xl space-x-2 mt-3">
+      <div className="mt-3 flex gap-5 space-x-2 text-2xl">
         <SocialLink
           link="https://github.com/jormy"
           icon={<TbBrandGithubFilled />}
@@ -28,7 +28,7 @@ function Links() {
         />
         <Link
           to="/contact"
-          className="has-tooltip hover:text-denim-200 transition-colors"
+          className="group transition-colors hover:text-denim-200"
         >
           <Tooltip text="contact" />
           <IoMail />

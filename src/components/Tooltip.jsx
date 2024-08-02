@@ -1,6 +1,6 @@
 function Tooltip(props) {
   return (
-    <div className="tooltip bg-denim-200 text-denim-950 -mt-8  text-sm tracking-tight inline-block rounded shadow-lg p-1 translate-x-[-25%] translate-y-[-20%]">
+    <div className="absolute -mt-9 w-auto min-w-max origin-bottom translate-x-[-30%] scale-0 rounded-md bg-denim-200 p-1 text-sm text-denim-950 shadow-md transition-all duration-100 group-hover:scale-100">
       {props.text}
     </div>
   );

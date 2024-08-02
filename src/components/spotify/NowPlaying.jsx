@@ -41,8 +41,8 @@ export const NowPlaying = (props) => {
       {loading && <p>Loading...</p>}
       {!loading && !result.isPlaying && (
         <>
-          <FaSpotify className="w-12 h-12" />
-          <span className="pl-3 text-md">
+          <FaSpotify className="h-12 w-12" />
+          <span className="text-md pl-3">
             Not playing <br /> anything
           </span>
         </>
@@ -52,15 +52,15 @@ export const NowPlaying = (props) => {
           <img
             src={result.albumImageUrl}
             alt={`${result.title} album cover`}
-            className="w-12 h-12 rounded-md"
+            className="h-12 w-12 rounded-md"
           />
           <div className="pl-3">
-            <div className="flex relative">
+            <div className="relative flex">
               <a
                 href={result.songUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-denim-200 text-md pr-6 flex gap-3"
+                className="text-md flex gap-3 pr-6 font-bold text-denim-200"
               >
                 {TruncateString(result.title, 40)}
                 <img src={visualiser} className="h-[1em] w-[1-em]" />

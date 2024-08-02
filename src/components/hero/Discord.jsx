@@ -29,7 +29,7 @@ export default function Discord() {
   return (
     <>
       <div
-        className={`w-5 h-5 bottom-[-3px] right-[-10px] ring-[6px] ring-denim-950 absolute rounded-full ${getStatusColor(lanyard?.discord_status)} cursor-pointer`}
+        className={`absolute bottom-[-3px] right-[-10px] h-5 w-5 rounded-full ring-[6px] ring-denim-950 ${getStatusColor(lanyard?.discord_status)} cursor-pointer`}
       ></div>
     </>
   );

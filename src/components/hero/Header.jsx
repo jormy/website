@@ -5,13 +5,13 @@ import Discord from "./Discord";
 function Header() {
   return (
     <>
-      <div className="flex justify-between mb-10">
+      <div className="mb-10 flex justify-between">
         <div>
-          <h1 className="text-denim-200 font-header text-8xl font-bold w-min relative">
+          <h1 className="relative w-min font-header text-8xl font-bold text-denim-200">
             jorm
             <Discord />
           </h1>
-          <p className="text-xl sm:text-2xl py-3 max-w-96  mt-5">
+          <p className="mt-5 max-w-96 py-3 text-xl sm:text-2xl">
             rookie dev, currently struggling to program this website.
           </p>
           <Links />

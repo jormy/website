@@ -17,6 +17,7 @@ function Projects() {
       descr:
         "attempt at creating a website using reactjs. Still a work in progress",
       link: "https://jorm.vercel.app/",
+      repo: "https://github.com/jormy/website-v2",
       img: website,
     },
     {
@@ -24,6 +25,7 @@ function Projects() {
       descr:
         "First site i made using html and css. Never got around to finishing it.",
       link: "https://jormy.github.io/",
+      repo: "https://github.com/jormy/jormy.github.io",
       img: oldwebsite,
     },
   ];

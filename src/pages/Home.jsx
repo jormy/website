@@ -1,12 +1,47 @@
 import Header from "../components/hero/Header";
-import Projects from "../components/projects/Projects";
+import ProjectCard from "../components/ProjectCard";
 
-// TODO: add a fade out linear gradient in front of grid pattern
 function Home() {
+  const projects = [
+    {
+      name: "song-search",
+      descr: "a basic song search app using react",
+      link: "https://songsearch.vercel.app/",
+      repo: "https://github.com/jormy/song-search",
+      showImg: false,
+    },
+    {
+      name: "website",
+      descr:
+        "attempt at creating a website using reactjs. Still a work in progress",
+      link: "https://jorm.vercel.app/",
+      showImg: false,
+    },
+    {
+      name: "old-website",
+      descr:
+        "First site i made using html and css. Never got around to finishing it.",
+      link: "https://jormy.github.io/",
+      showImg: false,
+    },
+  ];
+
   return (
     <>
       <Header />
-      <Projects />
+      <div className="grid grid-cols-2 gap-4">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.name}
+            name={project.name}
+            descr={project.descr}
+            link={project.link}
+            repo={project.repo}
+            img={project.img}
+            showImg={project.showImg}
+          />
+        ))}
+      </div>
     </>
   );
 }

@@ -17,13 +17,16 @@ function ProjectCard({ name, descr, link, repo, img, showImg = true }) {
           <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-denim-300 transition group-hover:text-denim-100" />
         </a>
         <p>{descr}</p>
-        <a
-          href={repo}
-          className="group absolute bottom-5 left-5 text-xl text-denim-300/[0.7] transition hover:text-denim-200"
-        >
-          <Tooltip text="view repo" />
-          <FaGithub />
-        </a>
+        {showImg ? (
+          <a
+            href={repo}
+            className="group absolute bottom-5 left-5 text-xl text-denim-300/[0.7] transition hover:text-denim-200"
+          >
+            <Tooltip text="view repo" />
+
+            <FaGithub />
+          </a>
+        ) : null}
       </div>
       {showImg && (
         <div className="w-1/2">

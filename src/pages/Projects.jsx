@@ -1,4 +1,4 @@
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/projectCard/ProjectCard";
 import songsearch from "../images/projects/songsearch.png";
 import website from "../images/projects/website.png";
 import oldwebsite from "../images/projects/old-website.png";

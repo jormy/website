@@ -1,5 +1,5 @@
 import Header from "../components/hero/Header";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/projectCard/ProjectCard";
 
 function Home() {
   const projects = [

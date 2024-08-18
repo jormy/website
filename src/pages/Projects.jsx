@@ -9,7 +9,7 @@ function Projects() {
     {
       name: "btd6-viewer",
       descr:
-        "React site to display btd6 information such as events, player data, challenges.",
+        "React site to display btd6 information such as events, player data and challenges. Still under construction",
       link: "https://btd6.vercel.app/",
       repo: "https://github.com/jormy/btd6-viewer",
       img: btd6viewer,

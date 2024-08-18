@@ -6,7 +6,7 @@ function Home() {
     {
       name: "btd6-viewer",
       descr:
-        "React site to display btd6 information such as events, player data, challenges.",
+        "React site to display btd6 information such as events, player data and challenges. Still under construction",
       link: "https://songsearch.vercel.app/",
       repo: "https://github.com/jormy/song-search",
       showImg: false,

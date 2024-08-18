@@ -1,9 +1,10 @@
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import Tooltip from "../Tooltip";
+import { getImg } from "../../utils";
 import "./ProjectCard.css";
 
-function ProjectCard({ name, descr, link, repo, img, showImg = true }) {
+function ProjectCard({ name, descr, link, repo, img }) {
   document.body.onmousemove = (e) => {
     for (const date of document.getElementsByClassName("card")) {
       const rect = date.getBoundingClientRect(),
@@ -14,6 +15,8 @@ function ProjectCard({ name, descr, link, repo, img, showImg = true }) {
       date.style.setProperty("--mouse-y", `${y}px`);
     }
   };
+
+  const showImg = img === undefined ? false : true;
 
   return (
     <div
@@ -45,9 +48,9 @@ function ProjectCard({ name, descr, link, repo, img, showImg = true }) {
         {showImg && (
           <div className="w-1/2">
             <img
-              src={img}
+              src={getImg(img)}
               className="h-full w-full rounded-r-md object-cover"
-              alt="Project Image"
+              alt={name}
             />
           </div>
         )}

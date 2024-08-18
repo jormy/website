@@ -4,6 +4,14 @@ import ProjectCard from "../components/projectCard/ProjectCard";
 function Home() {
   const projects = [
     {
+      name: "btd6-viewer",
+      descr:
+        "React site to display btd6 information such as events, player data, challenges.",
+      link: "https://songsearch.vercel.app/",
+      repo: "https://github.com/jormy/song-search",
+      showImg: false,
+    },
+    {
       name: "song-search",
       descr: "a basic song search app using react",
       link: "https://songsearch.vercel.app/",

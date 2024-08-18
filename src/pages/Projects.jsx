@@ -1,10 +1,19 @@
 import ProjectCard from "../components/projectCard/ProjectCard";
+import btd6viewer from "../images/projects/btd6-viewer.png";
 import songsearch from "../images/projects/songsearch.png";
 import website from "../images/projects/website.png";
 import oldwebsite from "../images/projects/old-website.png";
 
 function Projects() {
   const projects = [
+    {
+      name: "btd6-viewer",
+      descr:
+        "React site to display btd6 information such as events, player data, challenges.",
+      link: "https://btd6.vercel.app/",
+      repo: "https://github.com/jormy/btd6-viewer",
+      img: btd6viewer,
+    },
     {
       name: "song-search",
       descr: "a basic song search app using react",

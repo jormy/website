@@ -1,4 +1,7 @@
+import { useTitle } from "../utils";
+
 function Contact() {
+  useTitle("contact");
   return (
     <>
       <h1 className="text-xl font-bold text-denim-200">contact</h1>

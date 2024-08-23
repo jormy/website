@@ -1,8 +1,10 @@
 import Header from "../components/hero/Header";
 import ProjectCard from "../components/projectCard/ProjectCard";
 import { projects } from "../projects";
+import { useTitle } from "../utils";
 
 function Home() {
+  useTitle("");
   return (
     <>
       <Header />

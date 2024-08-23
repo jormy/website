@@ -1,7 +1,9 @@
 import ProjectCard from "../components/projectCard/ProjectCard";
 import { projects } from "../projects";
+import { useTitle } from "../utils";
 
 function Projects() {
+  useTitle("projects");
   return (
     <>
       <div className="grid gap-4">

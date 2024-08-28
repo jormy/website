@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.30",
     "next": "14.2.6",
     "query-string": "^9.1.0",
     "react": "^18",

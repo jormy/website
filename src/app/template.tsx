@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div
+    <m.div
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
@@ -13,6 +13,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

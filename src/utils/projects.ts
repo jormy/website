@@ -19,7 +19,7 @@ export const projects = [
     descr:
       "attempt at creating a website using reactjs. Still a work in progress",
     link: "https://jorm.vercel.app/",
-    repo: "https://github.com/jormy/website-v2",
+    repo: "https://github.com/jormy/website",
     img: "/images/projects/website.png",
   },
   {

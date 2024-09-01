@@ -16,8 +16,7 @@ export const projects = [
   },
   {
     name: "website",
-    descr:
-      "attempt at creating a website using reactjs. Still a work in progress",
+    descr: "attempt at creating a website using Nextjs & TailwindCSS. ",
     link: "https://jorm.vercel.app/",
     repo: "https://github.com/jormy/website",
     img: "/images/projects/website.png",

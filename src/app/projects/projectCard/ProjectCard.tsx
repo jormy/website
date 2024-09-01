@@ -46,14 +46,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     };
   }, []);
 
-  const showImg = Boolean(img);
-
   return (
     <div
       ref={cardRef}
       className={clsx(
         styles.card,
-        showImg ? "h-44" : "h-36",
+        img ? "h-[17rem] sm:h-44" : "h-36",
         "flex items-center justify-center rounded-lg bg-denim-300/[0.3] text-denim-300 backdrop-blur-sm transition ease-in"
       )}
     >
@@ -61,21 +59,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div
         className={clsx(
           styles["card-content"],
-          "flex justify-between rounded-[inherit] bg-denim-950/[0.95]"
+          "flex flex-col sm:flex-row rounded-[inherit] bg-denim-950/[0.95]"
         )}
       >
-        <div className={clsx(showImg ? "w-1/2" : "w-full", "p-5")}>
+        <div
+          className={clsx(
+            img ? "sm:w-1/2 w-full" : "w-full",
+            "order-2 sm:order-1 p-5"
+          )}
+        >
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mb-1 text-lg font-bold text-denim-200 transition hover:text-denim-100"
+            className="group text-lg font-bold text-denim-200 transition hover:text-denim-100"
           >
-            {name}
-            <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-denim-300 transition group-hover:text-denim-100" />
+            <h1 className="text-xl mb-1">
+              {name}
+              <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-denim-300 transition group-hover:text-denim-100" />
+            </h1>
           </a>
           <p>{descr}</p>
-          {showImg && repo && (
+          {img && repo && (
             <a
               href={repo}
               target="_blank"
@@ -87,12 +92,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </a>
           )}
         </div>
-        {showImg && (
-          <div className="w-1/2">
+        {img && (
+          <div className="order-1 sm:order-2 w-full sm:w-1/2">
             <img
               src={img}
-              className="h-full w-full rounded-r-md object-cover"
+              className="max-h-24 sm:max-h-none sm:m-0 h-full w-full rounded-t-md sm:rounded-r-md sm:rounded-l-none object-cover"
               alt={`${name} project image`}
+              // FIX ROUNDING CORNER ISSUE
             />
           </div>
         )}

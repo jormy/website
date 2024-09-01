@@ -14,7 +14,7 @@ export default function Home() {
       <div className="mb-10 flex justify-between">
         <div>
           <h1
-            className={`${benzin.className} relative w-min text-8xl font-bold text-denim-200`}
+            className={`${benzin.className} relative w-min md:text-8xl text-7xl font-bold text-denim-200`}
           >
             jorm
             <Discord />

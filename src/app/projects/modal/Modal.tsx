@@ -22,7 +22,7 @@ export function Backdrop({
 }) {
   return (
     <m.div
-      className="bg-black-950/[0.5] backdrop-blur-sm fixed inset-0 z-10 flex items-center justify-center"
+      className="bg-black-950/[0.5] absolute backdrop-blur-sm inset-0 z-50 flex items-center justify-center"
       onClick={onClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -57,6 +57,7 @@ export default function Modal({
           className="rounded-[inherit] w-[80vw] md:w-full"
         />
         <p className="text-black-300">Click anywhere to dismiss</p>
+        {/* fix loading height for images */}
       </m.div>
     </Backdrop>
   );

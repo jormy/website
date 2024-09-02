@@ -32,7 +32,7 @@ export default function RootLayout({
           priority
         />
         <div
-          className={`${inter.className} min-h-screen bg-gradient-to-t from-black-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-black-200 w-full`}
+          className={`${inter.className} min-h-screen w-screen bg-gradient-to-t from-black-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-black-200`}
         >
           <Navbar />
           <div className="flex-grow py-16 sm:py-24">{children}</div>

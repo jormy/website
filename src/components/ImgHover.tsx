@@ -27,7 +27,7 @@ const ImgHover = () => {
           e.currentTarget.style.setProperty("--xRotation", `${yRotation}deg`); //3d rotation is weird af man
           e.currentTarget.style.setProperty("--yRotation", `${xRotation}deg`);
         }}
-        className="hidden h-72 w-72 transition-transform ease-out hover:[transform:rotateX(var(--xRotation))_rotateY(var(--yRotation))_scale(1.05)] md:block"
+        className="hidden size-60 transition-transform ease-out hover:[transform:rotateX(var(--xRotation))_rotateY(var(--yRotation))_scale(1.05)] md:block"
       >
         <Image
           src={pfp}

@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         ref={cardRef}
         className={clsx(
           styles.card,
-          img ? "h-[17rem] sm:h-44" : "h-36",
+          img ? "h-[18rem] sm:h-48" : "h-36",
           "flex items-center justify-center rounded-lg bg-black-300/[0.3] text-black-300 backdrop-blur-sm transition ease-in"
         )}
       >
@@ -81,12 +81,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               rel="noopener noreferrer"
               className="group text-lg font-bold text-black-100 transition hover:text-black-50"
             >
-              <h1 className="text-xl mb-1 tracking-wide">
+              <h1 className="text-xl mb-2 tracking-tight">
                 {name}
                 <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-black-300 transition group-hover:text-black-100" />
               </h1>
             </a>
-            <p>{descr}</p>
+            <p className="text-black-400">{descr}</p>
             {img && repo && (
               <a
                 href={repo}

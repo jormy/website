@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <div className="mb-10 flex justify-between">
         <div>
-          <h1 className="w-min relative text-7xl font-extrabold text-black-50 mb-1">
+          <h1 className="w-min relative text-7xl font-semibold tracking-tight text-black-50 mb-1">
             jorm
             <Discord />
           </h1>
@@ -27,8 +27,8 @@ export default function Home() {
         {projects.map((project, index) => (
           <m.div
             key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
           >
             <ProjectCard

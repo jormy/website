@@ -19,14 +19,14 @@ type NowPlayingState = SongInfo | { isPlaying: false };
 const POLLING_INTERVAL = 10000;
 
 const Loading = () => (
-  <div className="flex w-fit text-black-300 h-12">
+  <div className="hidden md:flex w-fit text-black-300 h-12">
     <FaSpotify className="size-6 text-green-500" />
     <span className="text-md pl-3">Loading...</span>
   </div>
 );
 
 const NotPlaying = () => (
-  <div className="flex w-fit text-black-300 h-12">
+  <div className="hidden md:flex w-fit text-black-300 h-12">
     <FaSpotify className="size-6 text-green-500" />
     <span className="text-md pl-3">Not playing anything</span>
   </div>

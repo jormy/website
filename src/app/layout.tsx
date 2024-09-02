@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { manrope } from "@/utils/fonts";
+import { inter } from "@/utils/fonts";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Image from "next/image";
@@ -26,7 +26,7 @@ export default function RootLayout({
           priority
         />
         <div
-          className={`${manrope.className} min-h-screen bg-gradient-to-t from-black-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-black-200 w-full`}
+          className={`${inter.className} min-h-screen bg-gradient-to-t from-black-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-black-200 w-full`}
         >
           <Navbar />
           <div className="flex-grow py-16 sm:py-24">{children}</div>

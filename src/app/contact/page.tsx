@@ -1,11 +1,11 @@
-import { generalSans } from "@/utils/fonts";
+import { inter } from "@/utils/fonts";
 
 function Contact() {
   return (
     <>
       <div className="space-y-3">
         <h1
-          className={`${generalSans.className} text-6xl sm:text-7xl font-bold text-black-50 font-generalSans `}
+          className={`${inter.className} text-6xl sm:text-7xl font-extrabold text-black-50`}
         >
           contact
         </h1>

@@ -74,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             className="group text-lg font-bold text-black-100 transition hover:text-black-50"
           >
-            <h1 className="text-xl mb-1">
+            <h1 className="text-xl mb-1 tracking-wide">
               {name}
               <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-black-300 transition group-hover:text-black-100" />
             </h1>

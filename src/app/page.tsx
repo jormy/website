@@ -5,7 +5,6 @@ import SocialLinks from "@/components/SocialLinks";
 import ProjectCard from "@/app/projects/projectCard/ProjectCard";
 import Discord from "@/components/Discord";
 import { projects } from "@/utils/projects";
-import { inter } from "../utils/fonts";
 import { motion as m } from "framer-motion";
 
 export default function Home() {
@@ -13,9 +12,7 @@ export default function Home() {
     <>
       <div className="mb-10 flex justify-between">
         <div>
-          <h1
-            className={`${inter.className} w-min relative text-7xl font-extrabold text-black-50 mb-1 `}
-          >
+          <h1 className="w-min relative text-7xl font-extrabold text-black-50 mb-1">
             jorm
             <Discord />
           </h1>

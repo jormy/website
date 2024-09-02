@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import { inter } from "@/utils/fonts";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Image from "next/image";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "jorm",
   description: "a corner of the internet for jorm <3",
 };
+
+const inter = localFont({
+  src: "../../public/fonts/Inter-VariableFont.ttf",
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,

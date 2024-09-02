@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { inter } from "../utils/fonts";
 import { IoIosArrowForward } from "react-icons/io";
 
 function Error() {
@@ -7,11 +6,7 @@ function Error() {
     <>
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center">
-          <h1
-            className={`${inter.className} font-extrabold text-9xl text-black-50`}
-          >
-            404
-          </h1>
+          <h1 className="font-extrabold text-9xl text-black-50">404</h1>
           <p className="mb-7 mt-5 text-xl">the page requested was not found</p>
           <span>
             <Link

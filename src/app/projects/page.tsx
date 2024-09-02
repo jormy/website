@@ -1,7 +1,6 @@
 "use client";
 
 import ProjectCard from "@/app/projects/projectCard/ProjectCard";
-import { inter } from "@/utils/fonts";
 import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 
@@ -10,9 +9,7 @@ function Projects() {
     <>
       <div className="space-y-10">
         <div className="space-y-6">
-          <h1
-            className={`${inter.className} text-6xl sm:text-7xl font-extrabold text-black-50`}
-          >
+          <h1 className="text-6xl sm:text-7xl font-extrabold text-black-50">
             projects
           </h1>
           <p className="text-xl">some things that i&apos;ve worked on so far</p>

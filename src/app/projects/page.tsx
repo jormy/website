@@ -15,7 +15,7 @@ function Projects() {
           >
             projects
           </h1>
-          <p className="text-xl">some things that i've worked on so far </p>
+          <p className="text-xl">some things that i&apos;ve worked on so far</p>
         </div>
         <div className="grid gap-4">
           {projects.map((project, index) => (

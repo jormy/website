@@ -1,7 +1,7 @@
 "use client";
 
 import ProjectCard from "@/app/projects/projectCard/ProjectCard";
-import { benzin } from "@/utils/fonts";
+import { generalSans } from "@/utils/fonts";
 import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 
@@ -11,7 +11,7 @@ function Projects() {
       <div className="space-y-10">
         <div className="space-y-6">
           <h1
-            className={`${benzin.className} text-7xl font-bold text-denim-200`}
+            className={`${generalSans.className} text-6xl sm:text-7xl font-bold text-black-50`}
           >
             projects
           </h1>

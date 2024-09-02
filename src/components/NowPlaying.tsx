@@ -19,23 +19,21 @@ type NowPlayingState = SongInfo | { isPlaying: false };
 const POLLING_INTERVAL = 10000;
 
 const Loading = () => (
-  <div className="flex w-fit text-denim-300">
-    <FaSpotify className="h-12 w-12" />
+  <div className="flex w-fit text-black-300 h-12">
+    <FaSpotify className="size-6 text-green-500" />
     <span className="text-md pl-3">Loading...</span>
   </div>
 );
 
 const NotPlaying = () => (
-  <div className="flex w-fit text-denim-300">
-    <FaSpotify className="h-12 w-12" />
-    <span className="text-md pl-3">
-      Not playing <br /> anything
-    </span>
+  <div className="flex w-fit text-black-300 h-12">
+    <FaSpotify className="size-6 text-green-500" />
+    <span className="text-md pl-3">Not playing anything</span>
   </div>
 );
 
 const Playing = ({ song }: { song: SongInfo }) => (
-  <div className="flex w-fit text-denim-300">
+  <div className="hidden md:flex w-fit text-black-300 h-12">
     <img
       src={song.albumImageUrl}
       alt={`${song.title} album cover`}
@@ -47,7 +45,7 @@ const Playing = ({ song }: { song: SongInfo }) => (
           href={song.songUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-md flex gap-3 pr-6 font-bold text-denim-200"
+          className="text-md flex gap-3 pr-6 font-bold text-black-100"
         >
           {TruncateString({ str: song.title, num: 30 })}
           <img
@@ -115,7 +113,7 @@ export const NowPlaying = () => {
 
   if (error) {
     return (
-      <div className="flex w-fit text-denim-300">
+      <div className="flex w-fit text-black-300">
         <FaSpotify className="h-12 w-12" />
         <span className="text-md pl-3">{error}</span>
       </div>

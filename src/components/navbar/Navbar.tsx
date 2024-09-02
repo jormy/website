@@ -41,7 +41,7 @@ function LinkBg({ position }: { position: any }) {
   return (
     <m.div
       animate={position}
-      className="absolute h-11 z-0 rounded-full bg-denim-300/[0.2]"
+      className="absolute h-11 z-0 rounded-full bg-black-300/[0.2]"
     />
   );
 }
@@ -62,7 +62,7 @@ function Navbar() {
             opacity: 0,
           }));
         }}
-        className="relative flex flex-1 text-lg text-denim-300"
+        className="relative flex flex-1 text-lg text-black-300"
       >
         <NavLink setPosition={setPosition} href="/">
           /

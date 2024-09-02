@@ -52,14 +52,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       className={clsx(
         styles.card,
         img ? "h-[17rem] sm:h-44" : "h-36",
-        "flex items-center justify-center rounded-lg bg-denim-300/[0.3] text-denim-300 backdrop-blur-sm transition ease-in"
+        "flex items-center justify-center rounded-lg bg-black-300/[0.3] text-black-300 backdrop-blur-sm transition ease-in"
       )}
     >
       <div className={styles["card-border"]}></div>
       <div
         className={clsx(
           styles["card-content"],
-          "flex flex-col sm:flex-row rounded-[inherit] bg-denim-950/[0.95]"
+          "flex flex-col sm:flex-row rounded-[inherit] bg-black-950/[0.95]"
         )}
       >
         <div
@@ -72,11 +72,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group text-lg font-bold text-denim-200 transition hover:text-denim-100"
+            className="group text-lg font-bold text-black-100 transition hover:text-black-50"
           >
             <h1 className="text-xl mb-1">
               {name}
-              <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-denim-300 transition group-hover:text-denim-100" />
+              <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-black-300 transition group-hover:text-black-100" />
             </h1>
           </a>
           <p>{descr}</p>
@@ -85,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               href={repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="group absolute bottom-5 left-5 text-xl text-denim-300/[0.7] transition hover:text-denim-200"
+              className="group absolute bottom-5 left-5 text-xl text-black-300/[0.7] transition hover:text-black-200"
             >
               <Tooltip text="view repo" />
               <FaGithub />

@@ -8,23 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        header: ["Benzin", "sans-serif"],
-        body: ["Space Grotesk", "sans-serif"],
-      },
       colors: {
-        denim: {
-          50: "#f2f6fd",
-          100: "#e4ebfa",
-          200: "#c2d5f5",
-          300: "#809bc3",
-          400: "#508ee0",
-          500: "#2a70cd",
-          600: "#1b55ae",
-          700: "#17448d",
-          800: "#173b75",
-          900: "#183362",
-          950: "#070e1c",
+        black: {
+          50: "#f6f6f6",
+          100: "#e7e7e7",
+          200: "#d1d1d1",
+          300: "#b0b0b0",
+          400: "#888888",
+          500: "#6d6d6d",
+          600: "#5d5d5d",
+          700: "#4f4f4f",
+          800: "#454545",
+          900: "#3d3d3d",
+          950: "#050505",
         },
       },
     },

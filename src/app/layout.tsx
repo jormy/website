@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { spaceGrotesk } from "@/utils/fonts";
+import { manrope } from "@/utils/fonts";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "jorm",
@@ -15,9 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="absolute inset-0 min-h-screen overflow-auto bg-denim-950 bg-[linear-gradient(to_right,#191d24_1px,transparent_1px),linear-gradient(to_bottom,#191d24_1px,transparent_1px)] bg-[size:75px_75px]">
+      <body className="absolute w-screen inset-0 min-h-screen overflow-auto bg-black-950 bg-[linear-gradient(to_right,#1c1c1c_1px,transparent_1px),linear-gradient(to_bottom,#1c1c1c_1px,transparent_1px)] bg-[size:75px_75px]">
+        <Image
+          width={1512}
+          height={550}
+          className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
+          src="/images/ui/bg-gradient.png"
+          alt=""
+          priority
+        />
         <div
-          className={`${spaceGrotesk.className} min-h-screen bg-gradient-to-t from-denim-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-denim-300`}
+          className={`${manrope.className} min-h-screen bg-gradient-to-t from-black-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-black-200 w-full`}
         >
           <Navbar />
           <div className="flex-grow py-16 sm:py-24">{children}</div>

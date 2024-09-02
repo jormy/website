@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { benzin } from "../utils/fonts";
+import { generalSans } from "../utils/fonts";
 import { IoIosArrowForward } from "react-icons/io";
 
 function Error() {
@@ -7,7 +7,9 @@ function Error() {
     <>
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center">
-          <h1 className={`${benzin.className} text-9xl text-denim-200`}>404</h1>
+          <h1 className={`${generalSans.className} text-9xl text-denim-200`}>
+            404
+          </h1>
           <p className="mb-7 mt-5 text-xl">the page requested was not found</p>
           <span>
             <Link

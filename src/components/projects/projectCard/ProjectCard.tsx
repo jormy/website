@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/app/projects/projectCard/ProjectCard.module.css";
+import styles from "@/components/projects/projectCard/ProjectCard.module.css";
 import Tooltip from "@/components/Tooltip";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";

@@ -66,13 +66,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div
           className={clsx(
             styles["card-content"],
-            "flex flex-col rounded-[inherit] bg-black-950/[0.95] sm:flex-row",
+            "flex flex-col rounded-[inherit] bg-black-950/[0.95] p-3 sm:flex-row",
           )}
         >
           <div
             className={clsx(
               img ? "w-full sm:w-1/2" : "w-full",
-              "order-2 p-5 sm:order-1",
+              "order-2 p-2 pt-4 sm:order-1 md:pt-1",
             )}
           >
             <a
@@ -104,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <img
                 src={img}
                 onClick={() => (showModal ? close() : open())}
-                className="h-full max-h-24 w-full cursor-pointer rounded-t-md object-cover sm:m-0 sm:max-h-none sm:rounded-l-none sm:rounded-r-md"
+                className="h-full max-h-24 w-full cursor-pointer rounded-md object-cover sm:m-0 sm:max-h-none"
                 alt={`${name} project image`}
               />
             </div>

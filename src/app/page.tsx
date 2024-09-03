@@ -7,6 +7,7 @@ import Discord from "@/components/Discord";
 import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 import { TbMoonFilled } from "react-icons/tb";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,18 +24,8 @@ export default function Home() {
             </p>
 
             <SocialLinks />
-            <p className="text-black-300 py-6">
-              <TbMoonFilled className="inline" /> September 2, 2024 · 10:16:49
-              PM GMT + 8
-            </p>
           </div>
           <ImgHover />
-        </div>
-
-        <div>
-          <h2 className="text-4xl font-semibold text-black-50 text-center">
-            About Me
-          </h2>
         </div>
 
         <div className="space-y-6">
@@ -60,14 +51,16 @@ export default function Home() {
             ))}
           </div>
           <div className="flex justify-center">
-            <m.button
-              initial={{ scale: 1, backgroundColor: "#050505" }}
-              whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}
-              whileTap={{ scale: 0.9 }}
-              className="text-black-50 border border-black-800 px-3 py-2 rounded-lg text-center text-sm"
-            >
-              See all projects
-            </m.button>
+            <Link href="/projects">
+              <m.button
+                initial={{ scale: 1, backgroundColor: "#050505" }}
+                whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}
+                whileTap={{ scale: 0.9 }}
+                className="text-black-50 border border-black-800 px-3 py-2 rounded-lg text-center text-sm"
+              >
+                See all projects
+              </m.button>
+            </Link>
           </div>
         </div>
       </div>

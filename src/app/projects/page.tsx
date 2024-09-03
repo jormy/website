@@ -9,7 +9,7 @@ function Projects() {
     <>
       <div className="space-y-10">
         <div className="space-y-6">
-          <h1 className="text-6xl sm:text-7xl font-semibold tracking-tight text-black-50">
+          <h1 className="text-6xl font-semibold tracking-tight text-black-50 sm:text-7xl">
             projects
           </h1>
           <p className="text-xl">some things that i&apos;ve worked on so far</p>

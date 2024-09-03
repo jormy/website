@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import Image from "next/image";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Image from "next/image";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "jorm",
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="absolute w-screen inset-0 min-h-screen overflow-auto bg-black-950 ">
+      <body className="absolute inset-0 min-h-screen w-screen overflow-auto bg-black-950">
         <Image
           width={1512}
           height={550}
@@ -32,7 +32,7 @@ export default function RootLayout({
           priority
         />
         <div
-          className={`${inter.className} min-h-screen w-screen bg-gradient-to-t from-black-950 via-transparent mx-auto flex max-w-4xl flex-col px-8 py-10 text-black-200`}
+          className={`${inter.className} mx-auto flex min-h-screen w-screen max-w-4xl flex-col bg-gradient-to-t from-black-950 via-transparent px-8 py-10 text-black-200`}
         >
           <Navbar />
           <div className="flex-grow py-16 sm:py-24">{children}</div>

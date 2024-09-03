@@ -1,11 +1,11 @@
 "use client";
 
-import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
-import Tooltip from "@/components/Tooltip";
 import styles from "@/app/projects/projectCard/ProjectCard.module.css";
-import { useEffect, useRef, useState } from "react";
+import Tooltip from "@/components/Tooltip";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import Modal from "../modal/Modal";
 
 interface ProjectCardProps {
@@ -59,20 +59,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className={clsx(
           styles.card,
           img ? "h-[18rem] sm:h-48" : "h-36",
-          "flex items-center justify-center rounded-lg bg-black-300/[0.3] text-black-300 backdrop-blur-sm transition ease-in"
+          "flex items-center justify-center rounded-lg bg-black-300/[0.3] text-black-300 backdrop-blur-sm transition ease-in",
         )}
       >
         <div className={styles["card-border"]}></div>
         <div
           className={clsx(
             styles["card-content"],
-            "flex flex-col sm:flex-row rounded-[inherit] bg-black-950/[0.95]"
+            "flex flex-col rounded-[inherit] bg-black-950/[0.95] sm:flex-row",
           )}
         >
           <div
             className={clsx(
-              img ? "sm:w-1/2 w-full" : "w-full",
-              "order-2 sm:order-1 p-5"
+              img ? "w-full sm:w-1/2" : "w-full",
+              "order-2 p-5 sm:order-1",
             )}
           >
             <a
@@ -81,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               rel="noopener noreferrer"
               className="group text-lg font-bold text-black-100 transition hover:text-black-50"
             >
-              <h1 className="text-xl mb-2 tracking-tight">
+              <h1 className="mb-2 text-xl tracking-tight">
                 {name}
                 <FaArrowUpRightFromSquare className="ml-2 inline translate-y-[-0.1em] text-sm text-black-300 transition group-hover:text-black-100" />
               </h1>
@@ -100,11 +100,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
           </div>
           {img && (
-            <div className="order-1 sm:order-2 w-full sm:w-1/2">
+            <div className="order-1 w-full sm:order-2 sm:w-1/2">
               <img
                 src={img}
                 onClick={() => (showModal ? close() : open())}
-                className="cursor-pointer max-h-24 sm:max-h-none sm:m-0 h-full w-full rounded-t-md sm:rounded-r-md sm:rounded-l-none object-cover"
+                className="h-full max-h-24 w-full cursor-pointer rounded-t-md object-cover sm:m-0 sm:max-h-none sm:rounded-l-none sm:rounded-r-md"
                 alt={`${name} project image`}
               />
             </div>

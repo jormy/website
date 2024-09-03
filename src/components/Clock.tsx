@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TbSunFilled, TbMoonFilled } from "react-icons/tb";
+import { TbMoonFilled, TbSunFilled } from "react-icons/tb";
 
 // based off the clock by @cubedhuang at https://dan.onl/
 
@@ -32,7 +32,7 @@ export function Clock() {
   }, []);
 
   const currentHour = new Date(
-    now.toLocaleString("en-US", { timeZone: timezone })
+    now.toLocaleString("en-US", { timeZone: timezone }),
   ).getHours();
 
   const isDaytime = currentHour >= 6 && currentHour < 19;

@@ -31,7 +31,7 @@ export default function Discord() {
     <>
       <div
         className={`absolute bottom-[-3px] right-[-10px] size-4 rounded-full ring-[5px] ring-black-950 ${getStatusColor(
-          { status: lanyard?.discord_status || "offline" }
+          { status: lanyard?.discord_status || "offline" },
         )} cursor-pointer`}
       ></div>
     </>

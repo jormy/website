@@ -1,6 +1,6 @@
 "use client";
-import { useRef } from "react";
 import Image from "next/image";
+import { useRef } from "react";
 import pfp from "../../public/images/pfp.png";
 
 const ImgHover = () => {

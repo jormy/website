@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
 import { getNowPlayingItem } from "@/utils/getNowPlaying";
 import { TruncateString } from "@/utils/truncateString";
+import { useEffect, useRef, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
 import visualiser from "/public/images/visualiser.gif";
 
@@ -19,21 +19,21 @@ type NowPlayingState = SongInfo | { isPlaying: false };
 const POLLING_INTERVAL = 10000;
 
 const Loading = () => (
-  <div className="hidden md:flex w-fit text-black-300 h-12">
+  <div className="hidden h-12 w-fit text-black-300 md:flex">
     <FaSpotify className="size-6 text-green-500" />
     <span className="text-md pl-3">Loading...</span>
   </div>
 );
 
 const NotPlaying = () => (
-  <div className="hidden md:flex w-fit text-black-300 h-12">
+  <div className="hidden h-12 w-fit text-black-300 md:flex">
     <FaSpotify className="size-6 text-green-500" />
     <span className="text-md pl-3">Not playing anything</span>
   </div>
 );
 
 const Playing = ({ song }: { song: SongInfo }) => (
-  <div className="hidden md:flex w-fit text-black-300 h-12">
+  <div className="hidden h-12 w-fit text-black-300 md:flex">
     <img
       src={song.albumImageUrl}
       alt={`${song.title} album cover`}

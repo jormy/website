@@ -1,7 +1,7 @@
-import { TbBrandGithubFilled, TbBrandTwitterFilled } from "react-icons/tb";
+import Tooltip from "@/components/Tooltip";
 import { FaDiscord } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
-import Tooltip from "@/components/Tooltip";
+import { TbBrandGithubFilled, TbBrandTwitterFilled } from "react-icons/tb";
 
 function SocialLink({
   children,
@@ -16,7 +16,7 @@ function SocialLink({
     <a
       href={href}
       target="_blank"
-      className="group transition-colors hover:text-denim-200"
+      className="hover:text-denim-200 group transition-colors"
     >
       <Tooltip text={tooltip} />
 

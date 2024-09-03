@@ -1,14 +1,13 @@
 "use client";
 
+import ProjectCard from "@/app/projects/projectCard/ProjectCard";
+import { Clock } from "@/components/Clock";
+import Discord from "@/components/Discord";
 import ImgHover from "@/components/ImgHover";
 import SocialLinks from "@/components/SocialLinks";
-import ProjectCard from "@/app/projects/projectCard/ProjectCard";
-import Discord from "@/components/Discord";
 import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
-import { TbMoonFilled } from "react-icons/tb";
 import Link from "next/link";
-import { Clock } from "@/components/Clock";
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
       <div className="space-y-44">
         <div className="mb-10 flex justify-between">
           <div>
-            <h1 className="w-min relative text-7xl font-semibold tracking-tight text-black-50 mb-1">
+            <h1 className="relative mb-1 w-min text-7xl font-semibold tracking-tight text-black-50">
               jorm
               <Discord />
             </h1>
@@ -25,18 +24,24 @@ export default function Home() {
             </p>
 
             <SocialLinks />
-            <p className="text-black-300 py-6 flex items-center">
+            <p className="flex items-center py-6 text-black-300">
               <Clock />
             </p>
           </div>
           <ImgHover />
         </div>
 
-        <div className="space-y-6">
+        {/* <div>
           <h2 className="text-4xl font-semibold text-black-50 text-center">
+            About Me
+          </h2>
+        </div> */}
+
+        <div className="space-y-6">
+          <h2 className="text-center text-4xl font-semibold text-black-50">
             Selected Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {projects.map((project, index) => (
               <m.div
                 key={index}
@@ -60,7 +65,7 @@ export default function Home() {
                 initial={{ scale: 1, backgroundColor: "#050505" }}
                 whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}
                 whileTap={{ scale: 0.9 }}
-                className="text-black-50 border border-black-800 px-3 py-2 rounded-lg text-center text-sm"
+                className="rounded-lg border border-black-800 px-3 py-2 text-center text-sm text-black-50"
               >
                 See all projects
               </m.button>

@@ -13,7 +13,7 @@ const fadeIn = {
   exit: { opacity: 0 },
 };
 
-export function Backdrop({
+function Backdrop({
   children,
   onClick,
 }: {
@@ -22,7 +22,7 @@ export function Backdrop({
 }) {
   return (
     <m.div
-      className="bg-black-950/[0.5] absolute backdrop-blur-sm inset-0 z-50 flex items-center justify-center"
+      className="bg-black-950/[0.5] fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
       onClick={onClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="absolute w-screen inset-0 min-h-screen overflow-auto bg-black-950 bg-[linear-gradient(to_right,#1c1c1c_1px,transparent_1px),linear-gradient(to_bottom,#1c1c1c_1px,transparent_1px)] bg-[size:75px_75px]">
+      <body className="absolute w-screen inset-0 min-h-screen overflow-auto bg-black-950 ">
         <Image
           width={1512}
           height={550}

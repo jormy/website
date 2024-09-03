@@ -8,6 +8,7 @@ import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 import { TbMoonFilled } from "react-icons/tb";
 import Link from "next/link";
+import { Clock } from "@/components/Clock";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
             </p>
 
             <SocialLinks />
+            <p className="text-black-300 py-6 flex items-center">
+              <Clock />
+            </p>
           </div>
           <ImgHover />
         </div>

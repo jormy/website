@@ -1,4 +1,4 @@
-import GradientCard from "@/components/GradientCard";
+import GradientCard from "@/components/gradientCard/GradientCard";
 import Socials from "@/components/home/about/Socials";
 import NowPlaying from "@/components/NowPlaying";
 import { BsStack } from "react-icons/bs";

@@ -1,12 +1,12 @@
 "use client";
 
-import styles from "@/components/projects/projectCard/ProjectCard.module.css";
+import GradientCard from "@/components/gradientCard/GradientCard";
 import Tooltip from "@/components/Tooltip";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
-import Modal from "../modal/Modal";
+import Modal from "./modal/Modal";
 
 interface ProjectCardProps {
   name: string;
@@ -23,56 +23,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   repo,
   img,
 }) => {
-  const cardRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!cardRef.current) return;
-
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      cardRef.current.style.setProperty("--mouse-x", `${x}px`);
-      cardRef.current.style.setProperty("--mouse-y", `${y}px`);
-    };
-
-    const throttledMouseMove = (e: MouseEvent) => {
-      requestAnimationFrame(() => handleMouseMove(e));
-    };
-
-    document.body.addEventListener("mousemove", throttledMouseMove);
-
-    return () => {
-      document.body.removeEventListener("mousemove", throttledMouseMove);
-    };
-  }, []);
-
   const [showModal, setShowModal] = useState(false);
   const close = () => setShowModal(false);
   const open = () => setShowModal(true);
 
   return (
     <>
-      <div
-        ref={cardRef}
-        className={clsx(
-          styles.card,
-          img ? "h-[18rem] sm:h-48" : "h-36",
-          "flex items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm transition ease-in",
-        )}
-      >
-        <div className={styles["card-border"]}></div>
+      <GradientCard>
         <div
           className={clsx(
-            styles["card-content"],
-            "flex flex-col rounded-[inherit] bg-black-950/[0.95] p-3 sm:flex-row",
+            img ? "h-60 sm:h-[11rem]" : "h-28",
+            "flex flex-col sm:flex-row",
           )}
         >
           <div
             className={clsx(
-              img ? "w-full sm:w-1/2" : "w-full",
-              "order-2 p-2 pt-4 sm:order-1 md:pt-1",
+              img ? "w-full sm:h-48 sm:w-1/2" : "w-full",
+              "order-2 w-full pr-4 pt-4 sm:order-1 sm:pt-1",
             )}
           >
             <a
@@ -100,17 +67,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
           </div>
           {img && (
-            <div className="order-1 w-full sm:order-2 sm:w-1/2">
+            <div className="order-1 max-h-20 w-full sm:order-2 sm:max-h-44 sm:w-1/2">
               <img
                 src={img}
                 onClick={() => (showModal ? close() : open())}
-                className="h-full max-h-24 w-full cursor-pointer rounded-md object-cover sm:m-0 sm:max-h-none"
+                className="h-full w-full cursor-pointer rounded-md object-cover sm:m-0"
                 alt={`${name} project image`}
               />
             </div>
           )}
         </div>
-      </div>
+      </GradientCard>
       <AnimatePresence initial={false} mode="wait">
         {showModal && (
           <Modal handleClose={close} image={img || ""} text={name} />

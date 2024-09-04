@@ -1,4 +1,4 @@
-import styles from "@/components/projects/projectCard/ProjectCard.module.css";
+import styles from "@/components/gradientCard/GradientCard.module.css";
 import clsx from "clsx";
 import React, { useEffect, useRef } from "react";
 
@@ -36,7 +36,10 @@ export default function GradientCard({
     <>
       <div
         ref={cardRef}
-        className="card flex items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm"
+        className={clsx(
+          styles["card"],
+          "flex items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm",
+        )}
       >
         <div className={styles["card-border"]}></div>
         <div

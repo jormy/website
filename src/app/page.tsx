@@ -5,7 +5,7 @@ import { Clock } from "@/components/home/Clock";
 import Discord from "@/components/home/Discord";
 import ImgHover from "@/components/home/ImgHover";
 import SocialLinks from "@/components/home/SocialLinks";
-import ProjectCard from "@/components/projects/projectCard/ProjectCard";
+import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 import Link from "next/link";

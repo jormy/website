@@ -45,7 +45,7 @@ export default function GradientCard({
         <div
           className={clsx(
             styles["card-content"],
-            "rounded-[inherit] bg-black-950/[0.95] p-4",
+            "rounded-[inherit] bg-black-950/[0.95] px-4 py-3",
           )}
         >
           {children}

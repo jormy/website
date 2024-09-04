@@ -13,8 +13,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="space-y-44">
-        <div className="mb-10 flex justify-between">
+      <div className="space-y-32">
+        <div className="flex justify-between">
           <div>
             <h1 className="relative mb-1 w-min text-7xl font-semibold tracking-tight text-black-50">
               jorm

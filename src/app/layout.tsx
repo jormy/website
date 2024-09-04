@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: "a corner of the internet for jorm <3",
 };
 
-const inter = localFont({
-  src: "../../public/fonts/Inter-VariableFont.ttf",
-  variable: "--font-inter",
+const sfPro = localFont({
+  src: "../../public/fonts/SF-Pro.ttf",
+  variable: "--font-sf-pro",
   display: "swap",
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
           priority
         />
         <div
-          className={`${inter.className} mx-auto flex min-h-screen w-screen max-w-4xl flex-col bg-gradient-to-t from-black-950 via-transparent px-8 py-10 text-black-200`}
+          className={`${sfPro.className} mx-auto flex min-h-screen w-screen max-w-4xl flex-col bg-gradient-to-t from-black-950 via-transparent px-8 py-10 text-black-200`}
         >
           <Navbar />
           <div className="flex-grow py-16 sm:py-24">{children}</div>

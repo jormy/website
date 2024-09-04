@@ -8,8 +8,7 @@ const timezone = "Singapore";
 const formatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   weekday: "long",
-  year: "numeric",
-  month: "long",
+  month: "short",
   hour: "numeric",
   minute: "numeric",
   second: "numeric",
@@ -40,7 +39,7 @@ export function Clock() {
   return (
     <>
       {isDaytime ? <TbSunFilled /> : <TbMoonFilled />}
-      <span className="ml-2">
+      <span className="ml-2 text-base">
         {isClient && formatter.format(now).replace(" at", " ·")}
       </span>
     </>

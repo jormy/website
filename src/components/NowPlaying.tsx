@@ -75,7 +75,13 @@ export const NowPlaying = ({ fill = false }: { fill?: boolean }) => {
   );
 
   const NotPlaying = () => (
-    <div className="hidden h-12 w-fit text-black-300 md:flex">
+    <div
+      className={clsx([
+        fill ? `size-full` : `hidden h-12 w-fit`,
+        `text-black-300`,
+        `md:flex`,
+      ])}
+    >
       <FaSpotify
         className={clsx([fill ? `hidden` : `size-6 text-green-500`])}
       />

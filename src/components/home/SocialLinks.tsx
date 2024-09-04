@@ -16,10 +16,9 @@ function SocialLink({
     <a
       href={href}
       target="_blank"
-      className="hover:text-denim-200 group transition-colors"
+      className="group transition-colors hover:text-black-50"
     >
       <Tooltip text={tooltip} />
-
       {children}
     </a>
   );

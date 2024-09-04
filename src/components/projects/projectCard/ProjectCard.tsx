@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className={clsx(
           styles.card,
           img ? "h-[18rem] sm:h-48" : "h-36",
-          "flex items-center justify-center rounded-lg bg-black-300/[0.3] text-black-300 backdrop-blur-sm transition ease-in",
+          "flex items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm transition ease-in",
         )}
       >
         <div className={styles["card-border"]}></div>

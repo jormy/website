@@ -104,9 +104,8 @@ export const NowPlaying = ({ fill = false }: { fill?: boolean }) => {
   const Playing = ({ song }: { song: SongInfo }) => (
     <div
       className={clsx([
-        fill ? `size-full` : `hidden h-12 w-fit`,
+        fill ? `flex size-full` : `hidden h-12 w-fit md:flex`,
         `text-black-300`,
-        `md:flex`,
       ])}
     >
       <img

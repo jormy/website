@@ -38,7 +38,7 @@ export default function GradientCard({
         ref={cardRef}
         className={clsx(
           styles["card"],
-          "flex items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm",
+          "flex h-full items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm",
         )}
       >
         <div className={styles["card-border"]}></div>

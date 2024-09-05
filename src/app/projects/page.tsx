@@ -4,6 +4,32 @@ import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      duration: 0.3,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
 function Projects() {
   return (
     <>
@@ -14,14 +40,14 @@ function Projects() {
           </h1>
           <p className="text-xl">some things that i&apos;ve worked on so far</p>
         </div>
-        <div className="grid gap-4">
+        <m.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid gap-4"
+        >
           {projects.map((project, index) => (
-            <m.div
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-            >
+            <m.div key={index} variants={cardVariants}>
               <ProjectCard
                 key={index}
                 name={project.name}
@@ -32,7 +58,7 @@ function Projects() {
               />
             </m.div>
           ))}
-        </div>
+        </m.div>
       </div>
     </>
   );

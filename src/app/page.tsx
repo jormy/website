@@ -10,6 +10,34 @@ import { projects } from "@/utils/projects";
 import { motion as m } from "framer-motion";
 import Link from "next/link";
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      duration: 0.3,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
 export default function Home() {
   return (
     <>
@@ -31,27 +59,36 @@ export default function Home() {
           <ImgHover />
         </div>
 
-        <div className="space-y-6">
-          <h2 className="text-center text-4xl font-semibold text-black-50">
+        <m.div className="space-y-6">
+          <m.h2
+            initial={{ opacity: 0, filter: "blur(10px" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+            className="text-center text-4xl font-semibold text-black-50"
+          >
             About
-          </h2>
+          </m.h2>
           <About />
-        </div>
+        </m.div>
 
-        <div className="space-y-6">
-          <h2 className="text-center text-4xl font-semibold text-black-50">
+        <m.div className="space-y-6">
+          <m.h2
+            initial={{ opacity: 0, filter: "blur(10px" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+            className="text-center text-4xl font-semibold text-black-50"
+          >
             Selected Projects
-          </h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          </m.h2>
+          <m.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 gap-4 md:grid-cols-2"
+          >
             {projects.slice(0, 2).map((project, index) => (
-              <m.div
-                key={index}
-                initial={{ opacity: 0, filter: "blur(10px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
+              <m.div key={index} variants={cardVariants}>
                 <ProjectCard
-                  key={index}
                   name={project.name}
                   descr={project.descr}
                   link={project.link}
@@ -59,7 +96,7 @@ export default function Home() {
                 />
               </m.div>
             ))}
-          </div>
+          </m.div>
           <div className="flex justify-center">
             <Link href="/projects">
               <m.button
@@ -72,7 +109,7 @@ export default function Home() {
               </m.button>
             </Link>
           </div>
-        </div>
+        </m.div>
       </div>
     </>
   );

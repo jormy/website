@@ -1,6 +1,7 @@
 "use client";
 
 import { truncateString } from "@/utils/truncateString";
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
 
@@ -98,7 +99,12 @@ export default function NowPlaying() {
       <div className="ml-3">
         {spotifyData?.currentlyPlaying && (
           <div className="flex items-center">
-            <div className="animate-spin-slow flex size-24 flex-shrink-0 items-center justify-center rounded-full border-2 border-black-900/[0.5] bg-[radial-gradient(circle,#000_49%,#2e2e2e_50%,#000_51%)]">
+            <div
+              className={clsx([
+                isLastPlayed ? `animate-none` : `animate-spin-slow`,
+                `flex size-24 flex-shrink-0 items-center justify-center rounded-full border-2 border-black-900/[0.5] bg-[radial-gradient(circle,#000_49%,#2e2e2e_50%,#000_51%)]`,
+              ])}
+            >
               <img
                 src={spotifyData.currentlyPlaying.albumCover}
                 alt={`${spotifyData.currentlyPlaying.album} album art`}

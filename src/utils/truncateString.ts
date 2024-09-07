@@ -1,4 +1,4 @@
-export function TruncateString({
+export function truncateString({
   str,
   num,
 }: {

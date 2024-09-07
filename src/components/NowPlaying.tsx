@@ -1,156 +1,130 @@
 "use client";
 
-import { getNowPlayingItem } from "@/utils/getNowPlaying";
-import { TruncateString } from "@/utils/truncateString";
-import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { truncateString } from "@/utils/truncateString";
+import { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
-import Skeleton from "react-loading-skeleton";
-import visualiser from "/public/images/visualiser.gif";
 
-interface SongInfo {
-  albumImageUrl: string;
-  artist: string;
-  isPlaying: boolean;
-  songUrl: string;
+interface Track {
   title: string;
+  artist: string;
+  album: string;
+  albumCover: string;
 }
 
-type NowPlayingState = SongInfo | { isPlaying: false };
+interface CurrentlyPlaying extends Track {
+  isPlaying: boolean;
+  songUrl: string;
+}
 
-const POLLING_INTERVAL = 10000;
+interface RecentTrack extends Track {
+  playedAt: string;
+}
 
-export const NowPlaying = ({ fill = false }: { fill?: boolean }) => {
+interface SpotifyData {
+  currentlyPlaying: CurrentlyPlaying | null;
+  recentTracks: RecentTrack[];
+}
+
+export default function NowPlaying() {
+  const [spotifyData, setSpotifyData] = useState<SpotifyData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [result, setResult] = useState<NowPlayingState>({ isPlaying: false });
   const [error, setError] = useState<string | null>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isLastPlayed, setIsLastPlayed] = useState(false);
 
-  const fetchNowPlaying = async () => {
+  const fetchSpotifyData = async () => {
     try {
-      const nowPlaying = await getNowPlayingItem();
-
-      if (nowPlaying.isPlaying) {
-        const newSong: SongInfo = {
-          albumImageUrl: nowPlaying.albumImageUrl,
-          artist: nowPlaying.artist,
-          isPlaying: true,
-          songUrl: nowPlaying.songUrl,
-          title: nowPlaying.title,
-        };
-
-        setResult(newSong);
-      } else {
-        setResult({ isPlaying: false });
+      let response = await fetch("/api/spotify/now-playing", {
+        cache: "no-store",
+      });
+      if (!response.ok) {
+        throw new Error("Failed to fetch Spotify data");
       }
 
+      let data = await response.json();
+
+      if (!data.isPlaying) {
+        if (!isLastPlayed) {
+          setIsLastPlayed(true);
+        }
+        response = await fetch("/api/spotify/last-played", {
+          cache: "no-store",
+        });
+        if (!response.ok) {
+          throw new Error("Failed to fetch last played track");
+        }
+        data = await response.json();
+      } else {
+        if (isLastPlayed) {
+          setIsLastPlayed(false);
+        }
+      }
+
+      const currentlyPlaying: CurrentlyPlaying | null = {
+        title: data.title,
+        songUrl: data.songUrl,
+        artist: data.artist,
+        album: data.album,
+        albumCover: data.albumCover,
+        isPlaying: data.isPlaying,
+      };
+
+      setSpotifyData({
+        currentlyPlaying,
+        recentTracks: [],
+      });
       setLoading(false);
-    } catch (error) {
-      console.error("Failed to fetch the currently playing item.", error);
-      setError("Failed to fetch the currently playing item.");
-      setResult({ isPlaying: false });
+    } catch (err) {
+      setError("Error fetching Spotify data");
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchNowPlaying();
+    fetchSpotifyData();
+    const interval = setInterval(fetchSpotifyData, 10000);
 
-    intervalRef.current = setInterval(() => {
-      fetchNowPlaying();
-    }, POLLING_INTERVAL);
+    return () => clearInterval(interval);
+  }, [isLastPlayed]);
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
-
-  const Loading = () => (
-    <div className="hidden h-12 w-fit text-black-300 md:flex">
-      <Skeleton height={128} width={128} />
-      <span className="text-md pl-3">Loading...</span>
-    </div>
-  );
-
-  const NotPlaying = () => (
-    <div
-      className={clsx([
-        fill ? `size-full` : `hidden h-12 w-fit`,
-        `text-black-300`,
-        `md:flex`,
-      ])}
-    >
-      <FaSpotify
-        className={clsx([fill ? `hidden` : `size-6 text-green-500`])}
-      />
-      <div className={clsx([fill ? `` : `pl-3`])}>
-        <h2 className={clsx([fill ? `mb-1 text-lg` : `text-md`])}>
-          Not playing anything
-        </h2>
-        <p
-          className={clsx([
-            fill ? `block` : `hidden`,
-            `text-sm text-black-400`,
-          ])}
-        >
-          This component is a work in progress!
-        </p>
+  return (
+    <>
+      <h2 className="mb-4 flex items-center gap-2 text-base text-black-100">
+        <FaSpotify />
+        Spotify
+        <span className="text-black-300">
+          - {isLastPlayed ? "Last Played" : "Currently Playing"}
+        </span>
+      </h2>
+      <div className="ml-2">
+        {spotifyData?.currentlyPlaying && (
+          <div className="flex items-center">
+            <img
+              src={spotifyData.currentlyPlaying.albumCover}
+              alt={`${spotifyData.currentlyPlaying.album} album art`}
+              className="mr-4 h-16 w-16 rounded-md"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-black-200">
+                <a href={spotifyData.currentlyPlaying.songUrl}>
+                  {truncateString({
+                    str: spotifyData.currentlyPlaying.title,
+                    num: 25,
+                  })}
+                </a>
+              </h3>
+              <p>{spotifyData.currentlyPlaying.artist}</p>
+              <p className="text-sm text-gray-500">
+                {truncateString({
+                  str: spotifyData.currentlyPlaying.album,
+                  num: 30,
+                })}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
-
-  const Playing = ({ song }: { song: SongInfo }) => (
-    <div
-      className={clsx([
-        fill ? `flex size-full` : `hidden h-12 w-fit md:flex`,
-        `text-black-300`,
-      ])}
-    >
-      <img
-        src={song.albumImageUrl}
-        alt={`${song.title} album cover`}
-        className={clsx([fill ? `size-32` : `h-12 w-12`, `rounded-md`])}
-      />
-      <div className={clsx([fill ? `pl-5` : `pl-3`])}>
-        <div className="relative flex">
-          <a
-            href={song.songUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={clsx([
-              fill ? `text-lg` : `text-md`,
-              `flex gap-3 pr-6 font-semibold text-black-100`,
-            ])}
-          >
-            {TruncateString({ str: song.title, num: 30 })}
-            <img src={visualiser.src} alt="Visualiser" className="size-[1em]" />
-          </a>
-        </div>
-        <p>{song.artist}</p>
-      </div>
-    </div>
-  );
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (error) {
-    return (
-      <div className="flex w-fit text-black-300">
-        <FaSpotify className={fill ? `size-full` : `size-12`} />
-        <span className="text-md pl-3">{error}</span>
-      </div>
-    );
-  }
-
-  if (!result.isPlaying) {
-    return <NotPlaying />;
-  }
-
-  return <Playing song={result as SongInfo} />;
-};
-
-export default NowPlaying;
+}

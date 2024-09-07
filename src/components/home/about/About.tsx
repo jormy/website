@@ -3,7 +3,6 @@ import Socials from "@/components/home/about/Socials";
 import NowPlaying from "@/components/NowPlaying";
 import { motion as m } from "framer-motion";
 import { BsStack } from "react-icons/bs";
-import { FaSpotify } from "react-icons/fa";
 import { IoIosLink } from "react-icons/io";
 import { MdDevices } from "react-icons/md";
 import TechStack from "./TechStack";
@@ -94,13 +93,7 @@ export default function About() {
       >
         <m.div variants={cardVariants}>
           <GradientCard>
-            <h2 className="mb-4 flex items-center gap-2 text-base text-black-100">
-              <FaSpotify />
-              Spotify
-            </h2>
-            <div className="ml-2">
-              <NowPlaying fill={true} />
-            </div>
+            <NowPlaying />
           </GradientCard>
         </m.div>
 

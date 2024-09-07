@@ -1,6 +1,5 @@
 "use client";
 
-import NowPlaying from "@/components/NowPlaying";
 import { motion as m } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -75,7 +74,6 @@ function Navbar() {
         </NavLink>
         <LinkBg position={position} />
       </nav>
-      <NowPlaying />
     </div>
   );
 }

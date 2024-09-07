@@ -42,7 +42,8 @@ export default function NowPlaying() {
 
       let data = await response.json();
 
-      if (!data.isPlaying) {
+      // Safely handle if the structure of the response is not as expected
+      if (!data || !data.isPlaying) {
         if (!isLastPlayed) {
           setIsLastPlayed(true);
         }
@@ -60,12 +61,12 @@ export default function NowPlaying() {
       }
 
       const currentlyPlaying: CurrentlyPlaying | null = {
-        title: data.title,
-        songUrl: data.songUrl,
-        artist: data.artist,
-        album: data.album,
-        albumCover: data.albumCover,
-        isPlaying: data.isPlaying,
+        title: data?.title || "Unknown Title",
+        songUrl: data?.songUrl || "#",
+        artist: data?.artist || "Unknown Artist",
+        album: data?.album || "Unknown Album",
+        albumCover: data?.albumCover || "#",
+        isPlaying: data?.isPlaying || false,
       };
 
       setSpotifyData({
@@ -85,6 +86,7 @@ export default function NowPlaying() {
 
     return () => clearInterval(interval);
   }, [isLastPlayed]);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
@@ -104,6 +106,9 @@ export default function NowPlaying() {
               src={spotifyData.currentlyPlaying.albumCover}
               alt={`${spotifyData.currentlyPlaying.album} album art`}
               className="mr-4 h-16 w-16 rounded-md"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "#";
+              }}
             />
             <div>
               <h3 className="text-lg font-semibold text-black-200">

@@ -85,8 +85,6 @@ export default function NowPlaying() {
 
     return () => clearInterval(interval);
   }, [isLastPlayed]);
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
 
   return (
     <>
@@ -97,21 +95,20 @@ export default function NowPlaying() {
           - {isLastPlayed ? "Last Played" : "Currently Playing"}
         </span>
       </h2>
-      <div className="ml-2">
+      <div className="ml-3">
         {spotifyData?.currentlyPlaying && (
           <div className="flex items-center">
-            <img
-              src={spotifyData.currentlyPlaying.albumCover}
-              alt={`${spotifyData.currentlyPlaying.album} album art`}
-              className="mr-4 h-16 w-16 rounded-md"
-            />
+            <div className="animate-spin-slow mr-4 flex size-24 items-center justify-center rounded-full border-2 border-black-900/[0.5] bg-[radial-gradient(circle,#000_49%,#2e2e2e_50%,#000_51%)]">
+              <img
+                src={spotifyData.currentlyPlaying.albumCover}
+                alt={`${spotifyData.currentlyPlaying.album} album art`}
+                className="size-12 rounded-full bg-cover bg-center"
+              />
+            </div>
             <div>
               <h3 className="text-lg font-semibold text-black-200">
                 <a href={spotifyData.currentlyPlaying.songUrl}>
-                  {truncateString({
-                    str: spotifyData.currentlyPlaying.title,
-                    num: 25,
-                  })}
+                  {spotifyData.currentlyPlaying.title}
                 </a>
               </h3>
               <p>{spotifyData.currentlyPlaying.artist}</p>
@@ -124,6 +121,8 @@ export default function NowPlaying() {
             </div>
           </div>
         )}
+        {loading && <div>Loading...</div>}
+        {error && <div>{error}</div>}
       </div>
     </>
   );

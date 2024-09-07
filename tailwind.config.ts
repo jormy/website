@@ -23,6 +23,9 @@ const config: Config = {
           950: "#050505",
         },
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
   },
   plugins: [],

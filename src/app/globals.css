@@ -2,32 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
+.vinyl-gradient {
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+      26.62deg,
+      rgba(249, 124, 89, 0.8) 20.64%,
+      rgba(249, 124, 89, 0) 49.82%
+    ),
+    linear-gradient(56.79deg, #b95be6 33.79%, rgba(185, 91, 230, 0) 72.67%),
+    linear-gradient(
+      301.08deg,
+      rgba(252, 178, 91, 0.91) 20.42%,
+      rgba(252, 178, 91, 0) 60.38%
+    ),
+    linear-gradient(
+      141.57deg,
+      rgba(78, 173, 235, 0.85) 19.08%,
+      rgba(78, 173, 235, 0) 98.72%,
+      #d3e4ff
+    );
+  background-blend-mode: normal, hard-light, normal, darken, normal, normal;
 }

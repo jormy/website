@@ -99,17 +99,20 @@ export default function NowPlaying() {
       <div className="ml-3">
         {spotifyData?.currentlyPlaying && (
           <div className="flex items-center">
-            <div
-              className={clsx([
-                isLastPlayed ? `animate-none` : `animate-spin-slow`,
-                `flex size-24 flex-shrink-0 items-center justify-center rounded-full border-2 border-black-900/[0.5] bg-[radial-gradient(circle,#000_49%,#2e2e2e_50%,#000_51%)]`,
-              ])}
-            >
-              <img
-                src={spotifyData.currentlyPlaying.albumCover}
-                alt={`${spotifyData.currentlyPlaying.album} album art`}
-                className="size-12 rounded-full bg-cover bg-center"
-              />
+            <div className="relative">
+              <div
+                className={clsx([
+                  isLastPlayed ? `animate-none` : `animate-spin-slow`,
+                  `relative z-10 flex size-24 flex-shrink-0 items-center justify-center rounded-full border-2 border-black-900/[0.5] bg-[radial-gradient(circle,#000_48%,#2e2e2e_50%,#000_52%)]`,
+                ])}
+              >
+                <img
+                  src={spotifyData.currentlyPlaying.albumCover}
+                  alt={`${spotifyData.currentlyPlaying.album} album art`}
+                  className="size-12 rounded-full border border-black-900/[0.5]"
+                />
+              </div>
+              <div className="vinyl-gradient absolute -bottom-2 left-0 z-0 size-24 animate-spin-slow rounded-full opacity-40 blur-lg" />
             </div>
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-black-200">

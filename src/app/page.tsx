@@ -51,7 +51,7 @@ export default function Home() {
           variants={cardVariants}
           initial="hidden"
           animate="visible"
-          className="col-span-2"
+          className="col-span-6 md:col-span-2"
         >
           <GradientCard>
             <h2 className="mb-3 flex items-center gap-2 text-base text-black-100">

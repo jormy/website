@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import {
   FaCss3Alt,
@@ -41,42 +42,56 @@ export default function TechStack() {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 
+  const parentRef = useRef<HTMLDivElement>(null);
+  const [parentWidth, setParentWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (parentRef.current) {
+      setParentWidth(parentRef.current.offsetWidth);
+    }
+  }, []);
+
   return (
-    <div className="max-w-[23rem] space-y-6 overflow-x-hidden text-4xl text-black-300">
-      <Marquee
-        direction="left"
-        gradient
-        gradientColor="#050505"
-        gradientWidth={70}
+    <div ref={parentRef} className="w-full text-4xl text-black-300">
+      <div
+        className="mx-auto space-y-4"
+        style={{ maxWidth: parentWidth ? `${parentWidth}px` : "100%" }}
       >
-        {icons.map((icon, index) => {
-          return (
-            <div
-              key={index}
-              className="min-w-[calc(23rem/14)] px-2 transition-colors hover:text-black-50"
-            >
-              {icon.icon}
-            </div>
-          );
-        })}
-      </Marquee>
-      <Marquee
-        direction="right"
-        gradient
-        gradientColor="#050505"
-        gradientWidth={70}
-      >
-        {shuffledIcons.map((icon, index) => {
-          return (
-            <div
-              key={index}
-              className="min-w-[calc(23rem/14)] px-2 transition-colors hover:text-black-50"
-            >
-              {icon.icon}
-            </div>
-          );
-        })}
-      </Marquee>
+        <Marquee
+          direction="left"
+          gradient
+          gradientColor="#050505"
+          gradientWidth={70}
+        >
+          {icons.map((icon, index) => {
+            return (
+              <div
+                key={index}
+                className="min-w-[calc(23rem/14)] px-2 transition-colors hover:text-black-50"
+              >
+                {icon.icon}
+              </div>
+            );
+          })}
+        </Marquee>
+        <Marquee
+          direction="right"
+          gradient
+          gradientColor="#050505"
+          gradientWidth={70}
+        >
+          {shuffledIcons.map((icon, index) => {
+            return (
+              <div
+                key={index}
+                className="min-w-[calc(23rem/14)] px-2 transition-colors hover:text-black-50"
+              >
+                {icon.icon}
+              </div>
+            );
+          })}
+        </Marquee>
+      </div>
     </div>
   );
 }

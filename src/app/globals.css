@@ -22,3 +22,26 @@
     );
   background-blend-mode: normal, hard-light, normal, darken, normal, normal;
 }
+
+/* https://larsenwork.com/easing-gradients/#editor */
+.ease-gradient {
+  background: linear-gradient(
+    to top,
+    hsl(0, 0%, 2%) 0%,
+    hsla(0, 0%, 2%, 0.987) 10.5%,
+    hsla(0, 0%, 2%, 0.951) 19.9%,
+    hsla(0, 0%, 2%, 0.896) 28.4%,
+    hsla(0, 0%, 2%, 0.825) 36.2%,
+    hsla(0, 0%, 2%, 0.741) 43.3%,
+    hsla(0, 0%, 2%, 0.648) 49.7%,
+    hsla(0, 0%, 2%, 0.55) 55.8%,
+    hsla(0, 0%, 2%, 0.45) 61.4%,
+    hsla(0, 0%, 2%, 0.352) 66.8%,
+    hsla(0, 0%, 2%, 0.259) 72.1%,
+    hsla(0, 0%, 2%, 0.175) 77.3%,
+    hsla(0, 0%, 2%, 0.104) 82.6%,
+    hsla(0, 0%, 2%, 0.049) 88.1%,
+    hsla(0, 0%, 2%, 0.013) 93.8%,
+    hsla(0, 0%, 2%, 0) 100%
+  );
+}

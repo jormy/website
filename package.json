@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.2.1",
+    "embla-carousel-react": "^8.2.1",
     "framer-motion": "^11.3.30",
     "next": "^14.2.7",
     "query-string": "^9.1.0",

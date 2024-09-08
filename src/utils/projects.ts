@@ -1,8 +1,7 @@
 export const projects = [
   {
     name: "btd6-viewer",
-    descr:
-      "React site to display btd6 information such as events, player data and challenges. Still under construction",
+    descr: "WIP site to display information such as events and challenges",
     link: "https://btd6.vercel.app/",
     repo: "https://github.com/jormy/btd6-viewer",
     img: "/images/projects/btd6-viewer.png",

@@ -113,6 +113,7 @@ export default function NowPlaying() {
                 />
               </div>
               <div className="vinyl-gradient absolute -bottom-2 left-0 z-0 size-24 animate-spin-slow rounded-full opacity-40 blur-lg" />
+              {/* to do: extract colours from cover for gradient */}
             </div>
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-black-200">

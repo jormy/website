@@ -53,7 +53,7 @@ const cardVariants = {
 
 export default function About() {
   return (
-    <m.div className="grid gap-4 md:grid-cols-2">
+    <m.div className="col-span-6 grid gap-4 md:grid-cols-2">
       <m.div
         variants={leftContainer}
         initial="hidden"

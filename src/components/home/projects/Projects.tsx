@@ -83,6 +83,8 @@ export default function Projects() {
               </h2>
               <div className="space-x-3">
                 <m.button
+                  onMouseEnter={() => setIsHovered(false)}
+                  onMouseLeave={() => setIsHovered(true)}
                   onClick={scrollPrev}
                   initial={{ scale: 1, backgroundColor: "#050505" }}
                   whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}
@@ -92,6 +94,8 @@ export default function Projects() {
                   <FaChevronLeft />
                 </m.button>
                 <m.button
+                  onMouseEnter={() => setIsHovered(false)}
+                  onMouseLeave={() => setIsHovered(true)}
                   onClick={scrollNext}
                   initial={{ scale: 1, backgroundColor: "#050505" }}
                   whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}

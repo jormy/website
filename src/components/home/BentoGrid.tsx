@@ -67,7 +67,7 @@ const cardVariants = {
 export default function BentoGrid() {
   return (
     <div className="grid w-full grid-cols-6 gap-4">
-      <m.div className="col-span-6 grid w-full grid-cols-2 gap-4">
+      <m.div className="col-span-6 grid w-full gap-4 md:grid-cols-2">
         <m.div
           variants={leftContainer}
           initial="hidden"
@@ -103,7 +103,7 @@ export default function BentoGrid() {
         variants={bottomContainer}
         initial="hidden"
         animate="visible"
-        className="col-span-6 flex w-full gap-4"
+        className="col-span-6 flex w-full flex-col gap-4 md:flex-row"
       >
         <m.div variants={cardVariants}>
           <Projects />

@@ -1,4 +1,6 @@
+import GradientCard from "@/components/gradientCard/GradientCard";
 import Image from "next/image";
+import { MdDevices } from "react-icons/md";
 import arc from "../../../../public/images/tools/arc.webp";
 import figma from "../../../../public/images/tools/figma.webp";
 import phone from "../../../../public/images/tools/phone.webp";
@@ -27,20 +29,26 @@ export default function Tools() {
   }
 
   return (
-    <div>
-      <ul className="grid grid-cols-2 gap-5">
-        <Tool img={arc} name="Arc" descr="Browser of choice" />
-        <Tool img={vscode} name="VS Code" descr="IDE of choice" />
-        <Tool img={figma} name="Figma" descr="UI Design" />
-        <Tool img={powertoys} name="PowerToys" descr="Windows utilities" />
-        <div className="col-span-2">
-          <Tool
-            img={phone}
-            name="iPhone 12"
-            descr="Served me well until I dropped it"
-          />
-        </div>
-      </ul>
-    </div>
+    <GradientCard>
+      <h2 className="mb-3 flex items-center gap-2 text-base text-black-100">
+        <MdDevices />
+        Tools
+      </h2>
+      <div className="ml-2">
+        <ul className="grid grid-cols-2 gap-5">
+          <Tool img={arc} name="Arc" descr="Browser of choice" />
+          <Tool img={vscode} name="VS Code" descr="IDE of choice" />
+          <Tool img={figma} name="Figma" descr="UI Design" />
+          <Tool img={powertoys} name="PowerToys" descr="Windows utilities" />
+          <div className="col-span-2">
+            <Tool
+              img={phone}
+              name="iPhone 12"
+              descr="Served me well until I dropped it"
+            />
+          </div>
+        </ul>
+      </div>
+    </GradientCard>
   );
 }

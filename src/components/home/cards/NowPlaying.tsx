@@ -4,6 +4,7 @@ import { truncateString } from "@/utils/truncateString";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
+import GradientCard from "../../gradientCard/GradientCard";
 
 interface Track {
   title: string;
@@ -88,7 +89,7 @@ export default function NowPlaying() {
   }, [isLastPlayed]);
 
   return (
-    <>
+    <GradientCard>
       <h2 className="mb-4 flex items-center gap-2 text-base text-black-100">
         <FaSpotify />
         Spotify
@@ -134,6 +135,6 @@ export default function NowPlaying() {
         {loading && <div>Loading...</div>}
         {error && <div>{error}</div>}
       </div>
-    </>
+    </GradientCard>
   );
 }

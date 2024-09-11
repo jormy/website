@@ -1,13 +1,10 @@
 "use client";
 
-import GradientCard from "@/components/gradientCard/GradientCard";
-import About from "@/components/home/about/About";
+import BentoGrid from "@/components/home/BentoGrid";
 import { Clock } from "@/components/home/Clock";
 import Discord from "@/components/home/Discord";
 import ImgHover from "@/components/home/ImgHover";
-import Projects from "@/components/home/projects/Projects";
 import SocialLinks from "@/components/home/SocialLinks";
-import { motion as m } from "framer-motion";
 
 const cardVariants = {
   hidden: {
@@ -44,23 +41,7 @@ export default function Home() {
         <ImgHover />
       </div>
 
-      <div className="grid grid-cols-6 gap-4">
-        <About />
-        <Projects />
-        <m.div
-          variants={cardVariants}
-          initial="hidden"
-          animate="visible"
-          className="col-span-6 md:col-span-2"
-        >
-          <GradientCard>
-            <h2 className="mb-3 flex items-center gap-2 text-base text-black-100">
-              Under Construction
-            </h2>
-            <p>check back later when I think of what to put here</p>
-          </GradientCard>
-        </m.div>
-      </div>
+      <BentoGrid />
     </>
   );
 }

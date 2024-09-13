@@ -26,7 +26,7 @@ export default function RootLayout({
         <Image
           width={1512}
           height={550}
-          className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
+          className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 select-none"
           src="/images/ui/bg-gradient.png"
           alt=""
           priority

@@ -3,6 +3,7 @@
 import { motion as m } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import CommandMenu from "./CommandMenu";
 
 function NavLink({
   children,
@@ -74,6 +75,7 @@ function Navbar() {
         </NavLink>
         <LinkBg position={position} />
       </nav>
+      <CommandMenu />
     </div>
   );
 }

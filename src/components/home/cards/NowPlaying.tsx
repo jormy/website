@@ -80,7 +80,7 @@ export default function NowPlaying() {
       <div className="ml-3">
         {spotifyData ? (
           <div className="flex items-center">
-            <div className="relative">
+            <div className="vinyl relative">
               <div
                 className={clsx([
                   isLastPlayed ? `animate-none` : `animate-spin-slow`,
@@ -93,7 +93,6 @@ export default function NowPlaying() {
                   className="size-12 rounded-full border border-black-900/[0.5]"
                 />
               </div>
-              <div className="vinyl-gradient absolute -bottom-2 left-0 z-0 size-24 animate-spin-slow rounded-full opacity-40 blur-lg" />
             </div>
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-black-200">

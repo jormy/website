@@ -1,6 +1,5 @@
 "use client";
 
-import { truncateString } from "@/utils/truncateString";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
@@ -98,11 +97,13 @@ export default function NowPlaying() {
             </div>
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-black-200">
-                <a href={spotifyData.songUrl || "#"}>{spotifyData.title}</a>
+                <a className="line-clamp-1" href={spotifyData.songUrl || "#"}>
+                  {spotifyData.title}
+                </a>
               </h3>
               <p>{spotifyData.artist}</p>
-              <p className="text-sm text-gray-500">
-                {truncateString({ str: spotifyData.album, num: 30 })}
+              <p className="line-clamp-2 text-sm text-gray-500">
+                {spotifyData.album}
               </p>
             </div>
           </div>

@@ -4,7 +4,6 @@ import Socials from "@/components/home/cards/Socials";
 import TechStack from "@/components/home/cards/TechStack";
 import Tools from "@/components/home/cards/Tools";
 import { motion as m } from "framer-motion";
-import Weather from "./cards/Weather";
 
 const leftContainer = {
   hidden: {
@@ -109,9 +108,9 @@ export default function BentoGrid() {
           <Projects />
         </m.div>
 
-        <m.div variants={cardVariants}>
+        {/* <m.div variants={cardVariants}>
           <Weather />
-        </m.div>
+        </m.div> */}
       </m.div>
     </div>
   );

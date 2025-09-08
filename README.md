@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  jorm.lol
+  jorm.vercel.app
 </h1>
 
 <p align="center">

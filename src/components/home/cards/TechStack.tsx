@@ -17,9 +17,8 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVercel,
-  SiVisualstudiocode,
-  SiVite,
 } from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
 
 export default function TechStack() {
   const icons = [
@@ -34,8 +33,7 @@ export default function TechStack() {
     { icon: <SiNextdotjs /> },
     { icon: <SiTailwindcss /> },
     { icon: <SiTypescript /> },
-    { icon: <SiVisualstudiocode /> },
-    { icon: <SiVite /> },
+    { icon: <BiLogoVisualStudio /> },
     { icon: <SiVercel /> },
   ];
 

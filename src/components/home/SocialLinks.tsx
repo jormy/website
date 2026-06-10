@@ -1,7 +1,8 @@
 import Tooltip from "@/components/Tooltip";
 import { FaDiscord } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
-import { TbBrandGithubFilled, TbBrandTwitterFilled } from "react-icons/tb";
+import { TbBrandGithubFilled } from "react-icons/tb";
+import MakerWorldIcon from "../../../public/icons/MakerWorldIcon";
 
 function SocialLink({
   children,
@@ -16,7 +17,7 @@ function SocialLink({
     <a
       href={href}
       target="_blank"
-      className="group transition-colors hover:text-black-50"
+      className="group relative transition-colors hover:text-black-50"
     >
       <Tooltip text={tooltip} />
       {children}
@@ -27,17 +28,17 @@ function SocialLink({
 function SocialLinks() {
   return (
     <div className="mt-3 flex gap-5 space-x-2 text-2xl">
-      <SocialLink href="https://github.com/jormy" tooltip="@jormy">
+      <SocialLink href="https://github.com/jormy" tooltip="github">
         <TbBrandGithubFilled />
+      </SocialLink>
+      <SocialLink href="https://makerworld.com/@jormy" tooltip="makerworld">
+        <MakerWorldIcon className="size-6" />
       </SocialLink>
       <SocialLink
         href="https://discordapp.com/users/743010360340250725"
-        tooltip="@jormers"
+        tooltip="discord"
       >
         <FaDiscord />
-      </SocialLink>
-      <SocialLink href="https://twitter.com/sirjorm" tooltip="@sirjorm">
-        <TbBrandTwitterFilled />
       </SocialLink>
       <SocialLink href="/contact" tooltip="contact">
         <IoMail />

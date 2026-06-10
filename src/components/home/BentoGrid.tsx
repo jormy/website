@@ -1,9 +1,9 @@
 import NowPlaying from "@/components/home/cards/NowPlaying";
 import Projects from "@/components/home/cards/Projects";
-import Socials from "@/components/home/cards/Socials";
 import TechStack from "@/components/home/cards/TechStack";
 import Tools from "@/components/home/cards/Tools";
 import { motion as m } from "framer-motion";
+import MakerWorld from "./cards/MakerWorld";
 
 const leftContainer = {
   hidden: {
@@ -74,7 +74,7 @@ export default function BentoGrid() {
           className="grid gap-4"
         >
           <m.div variants={cardVariants}>
-            <Socials />
+            <MakerWorld />
           </m.div>
 
           <m.div variants={cardVariants}>

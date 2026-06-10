@@ -36,17 +36,10 @@ export default function Tools() {
       </h2>
       <div className="ml-2">
         <ul className="grid grid-cols-2 gap-5">
-          <Tool img={arc} name="Arc" descr="Browser of choice" />
+          <Tool img={arc} name="Zen Browser" descr="Browser of choice" />
           <Tool img={vscode} name="VS Code" descr="IDE of choice" />
-          <Tool img={figma} name="Figma" descr="UI Design" />
-          <Tool img={powertoys} name="PowerToys" descr="Windows utilities" />
-          <div className="col-span-2">
-            <Tool
-              img={phone}
-              name="iPhone 12"
-              descr="Served me well until I dropped it"
-            />
-          </div>
+          <Tool img={figma} name="Fusion" descr="3D Design" />
+          <Tool img={powertoys} name="Affinity" descr="Image Editing" />
         </ul>
       </div>
     </GradientCard>

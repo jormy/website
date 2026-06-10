@@ -31,7 +31,7 @@ export default function Home() {
             <Discord />
           </h1>
           <p className="max-w-96 py-3 text-lg">
-            rookie dev, currently struggling to program this website.
+            student, rookie dev, and 3d designer.
           </p>
           <SocialLinks />
           <p className="flex items-center py-6 text-black-300">

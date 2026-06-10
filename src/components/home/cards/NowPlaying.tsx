@@ -101,7 +101,7 @@ export default function NowPlaying() {
                 </a>
               </h3>
               <p>{spotifyData.artist}</p>
-              <p className="line-clamp-2 text-sm text-gray-500">
+              <p className="line-clamp-1 text-sm text-gray-500">
                 {spotifyData.album}
               </p>
             </div>

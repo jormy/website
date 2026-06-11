@@ -88,8 +88,9 @@ export default function MakerWorld() {
           </span>
         </h2>
         <span className="group relative text-sm text-black-400">
-          {timeAgo(stats.updatedAt)}
-          <Tooltip text={`Updated ${formatDate(stats.updatedAt)}`} />
+          <Tooltip text={`Updated ${formatDate(stats.updatedAt)}`}>
+            <span>{timeAgo(stats.updatedAt)}</span>
+          </Tooltip>
         </span>
       </div>
 

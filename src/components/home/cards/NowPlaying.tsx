@@ -77,7 +77,7 @@ export default function NowPlaying() {
           - {isLastPlayed ? "Last Played" : "Currently Playing"}
         </span>
       </h2>
-      <div className="ml-3">
+      <div className="mb-3 ml-3">
         {spotifyData ? (
           <div className="flex items-center">
             <div className="vinyl relative">

@@ -2,7 +2,7 @@ import Tooltip from "@/components/Tooltip";
 import { FaDiscord } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { TbBrandGithubFilled } from "react-icons/tb";
-import MakerWorldIcon from "../../../public/icons/MakerWorldIcon";
+import MakerWorldIcon from "@/../public/icons/MakerWorldIcon";
 
 function SocialLink({
   children,
@@ -14,14 +14,16 @@ function SocialLink({
   tooltip: string;
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      className="group relative transition-colors hover:text-black-50"
-    >
-      <Tooltip text={tooltip} />
-      {children}
-    </a>
+    <Tooltip text={tooltip}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors hover:text-black-50"
+      >
+        {children}
+      </a>
+    </Tooltip>
   );
 }
 

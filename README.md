@@ -13,12 +13,12 @@
 </p>
 
 <p align="center">
-My personal site. Totally not the third time i've rewritten it.
+my personal site, rewritten for the third time.
 </p>
 
 ## Tech Stack
 
-- Framework - [Next.js 14 w/ App Router](https://nextjs.org/)
+- Framework - [Next.js 16 w/ App Router](https://nextjs.org/)
 - Styling - [TailwindCSS](https://tailwindcss.com/)
 - Animation - [Framer Motion](https://framer.com/motion/)
 - Deployment - [Vercel](https://vercel.com/)

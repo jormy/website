@@ -14,7 +14,7 @@ const leftContainer = {
 
     transition: {
       duration: 0.3,
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -28,8 +28,8 @@ const rightContainer = {
 
     transition: {
       duration: 0.3,
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.3,
+      delayChildren: 0.1,
     },
   },
 };
@@ -52,11 +52,9 @@ const bottomContainer = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.3,
     },

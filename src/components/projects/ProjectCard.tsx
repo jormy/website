@@ -49,11 +49,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               rel="noopener noreferrer"
               className="group absolute bottom-5 left-5 text-xl text-black-300/[0.7] transition hover:text-black-200"
             >
-              <Tooltip text="view repo">
-                <span>
-                  <FaGithub />
-                </span>
-              </Tooltip>
+              <Tooltip text="view repo" />
+              <FaGithub />
             </a>
           </div>
           <div className="order-1 max-h-20 w-full sm:order-2 sm:max-h-44 sm:w-1/2">

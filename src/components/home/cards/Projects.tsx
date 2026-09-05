@@ -48,7 +48,7 @@ export default function Projects() {
             whileTap={{ scale: 0.9 }}
             className={clsx([
               isHovered ? `opacity-100` : `opacity-0`,
-              `absolute left-1/2 top-1/2 z-10 rounded-lg border border-black-800 px-3 py-2 text-center text-sm text-black-50 transition-opacity duration-500 ease-out`,
+              `absolute left-1/2 top-1/2 z-10 rounded-full border border-black-800 px-3 py-2 text-center text-sm text-black-50 transition-opacity duration-500 ease-out`,
             ])}
           >
             All projects

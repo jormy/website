@@ -1,6 +1,6 @@
 import NowPlaying from "@/components/home/cards/NowPlaying";
 import Projects from "@/components/home/cards/Projects";
-import TechStack from "@/components/home/cards/TechStack";
+import TechStack from "@/components/home/cards/Music";
 import Tools from "@/components/home/cards/Tools";
 import { motion as m } from "framer-motion";
 import MakerWorld from "./cards/MakerWorld";
@@ -63,19 +63,19 @@ const cardVariants = {
 
 export default function BentoGrid() {
   return (
-    <div className="grid w-full grid-cols-6 gap-4">
-      <m.div className="col-span-6 grid w-full gap-4 md:grid-cols-2">
+    <div className="grid w-full min-w-0 grid-cols-6 gap-4">
+      <m.div className="col-span-6 grid w-full min-w-0 gap-4 md:grid-cols-2">
         <m.div
           variants={leftContainer}
           initial="hidden"
           animate="visible"
-          className="grid gap-4"
+          className="grid min-w-0 gap-4"
         >
-          <m.div variants={cardVariants}>
+          <m.div variants={cardVariants} className="min-w-0">
             <MakerWorld />
           </m.div>
 
-          <m.div variants={cardVariants}>
+          <m.div variants={cardVariants} className="min-w-0">
             <Tools />
           </m.div>
         </m.div>
@@ -84,13 +84,13 @@ export default function BentoGrid() {
           variants={rightContainer}
           initial="hidden"
           animate="visible"
-          className="grid gap-4"
+          className="grid min-w-0 gap-4"
         >
-          <m.div variants={cardVariants}>
+          <m.div variants={cardVariants} className="min-w-0">
             <NowPlaying />
           </m.div>
 
-          <m.div variants={cardVariants}>
+          <m.div variants={cardVariants} className="min-w-0">
             <TechStack />
           </m.div>
         </m.div>

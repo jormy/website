@@ -38,14 +38,14 @@ export default function GradientCard({
         ref={cardRef}
         className={clsx(
           styles["card"],
-          "flex h-full min-w-0 items-center justify-center rounded-lg bg-gradient-to-b from-black-800/[0.7] to-black-900/[0.3] text-black-300 backdrop-blur-sm",
+          "flex h-full min-w-0 items-center justify-center rounded-lg bg-linear-to-b from-black-800/70 to-black-900/30 text-black-300 backdrop-blur-xs",
         )}
       >
         <div className={styles["card-border"]}></div>
         <div
           className={clsx(
             styles["card-content"],
-            "min-w-0 rounded-[inherit] bg-black-950/[0.95] px-4 py-3",
+            "min-w-0 rounded-[inherit] bg-black-950/95 px-4 py-3",
           )}
         >
           {children}

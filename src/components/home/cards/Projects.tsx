@@ -9,6 +9,8 @@ import Link from "next/link";
 import { useCallback, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaPencil } from "react-icons/fa6";
 
+const allProjects = Object.values(projects).flat();
+
 export default function Projects() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 5000 }),
@@ -48,7 +50,7 @@ export default function Projects() {
             whileTap={{ scale: 0.9 }}
             className={clsx([
               isHovered ? `opacity-100` : `opacity-0`,
-              `absolute left-1/2 top-1/2 z-10 rounded-full border border-black-800 px-3 py-2 text-center text-sm text-black-50 transition-opacity duration-500 ease-out`,
+              `border-black-800 text-black-50 absolute top-1/2 left-1/2 z-10 rounded-full border px-3 py-2 text-center text-sm transition-opacity duration-500 ease-out`,
             ])}
           >
             All projects
@@ -56,7 +58,7 @@ export default function Projects() {
         </Link>
         <GradientCard>
           <div className="flex w-full justify-between">
-            <h2 className="mb-4 flex items-center gap-2 text-base text-black-100">
+            <h2 className="text-black-100 mb-4 flex items-center gap-2 text-base">
               <FaPencil />
               Projects
             </h2>
@@ -70,7 +72,7 @@ export default function Projects() {
                 initial={{ scale: 1, backgroundColor: "#050505" }}
                 whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}
                 whileTap={{ scale: 0.9 }}
-                className="rounded-full border border-black-800 p-2 text-center text-sm text-black-50"
+                className="border-black-800 text-black-50 rounded-full border p-2 text-center text-sm"
               >
                 <FaChevronLeft />
               </m.button>
@@ -79,7 +81,7 @@ export default function Projects() {
                 initial={{ scale: 1, backgroundColor: "#050505" }}
                 whileHover={{ scale: 1.05, backgroundColor: "#3d3d3d" }}
                 whileTap={{ scale: 0.9 }}
-                className="rounded-full border border-black-800 p-2 text-center text-sm text-black-50"
+                className="border-black-800 text-black-50 rounded-full border p-2 text-center text-sm"
               >
                 <FaChevronRight />
               </m.button>
@@ -88,30 +90,32 @@ export default function Projects() {
 
           <div
             className={`overflow-hidden transition duration-300 ${
-              isHovered ? "blur-sm" : "blur-none"
+              isHovered ? "blur-xs" : "blur-none"
             }`}
             ref={emblaRef}
           >
             <div className="flex">
-              {projects.map((project, index) => (
+              {allProjects.map((project, index) => (
                 <div
                   key={index}
                   className="relative min-w-0 flex-[0_0_100%] px-2"
                 >
-                  <div className="ease-gradient absolute bottom-0 w-full px-4 pb-4 pt-16">
-                    <h3 className="text-lg font-semibold text-black-100">
+                  <div className="ease-gradient absolute bottom-0 w-full px-4 pt-16 pb-4">
+                    <h3 className="text-black-100 text-lg font-semibold">
                       {project.name}
                     </h3>
                     <p>{project.descr}</p>
                   </div>
 
-                  <Image
-                    src={project.img}
-                    alt={`${project.name} project image`}
-                    width={1000}
-                    height={300}
-                    className="max-h-44 rounded-md object-cover"
-                  />
+                  {project.img && (
+                    <Image
+                      src={project.img}
+                      alt={`${project.name} project image`}
+                      width={1000}
+                      height={300}
+                      className="max-h-44 rounded-md object-cover"
+                    />
+                  )}
                 </div>
               ))}
             </div>

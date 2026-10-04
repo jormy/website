@@ -46,16 +46,16 @@ function MusicSkeleton({ showArtist }: { showArtist: boolean }) {
           <div key={index} className="w-24 shrink-0 animate-pulse">
             <div className="aspect-square w-full rounded-lg bg-black-900" />
             <div className="mt-2">
-              <div className="h-6 w-full rounded bg-black-900" />
-              {showArtist && <div className="h-5 w-4/5 rounded bg-black-900" />}
-              <div className="h-4 w-3/5 rounded bg-black-900" />
+              <div className="h-6 w-full rounded-sm bg-black-900" />
+              {showArtist && <div className="h-5 w-4/5 rounded-sm bg-black-900" />}
+              <div className="h-4 w-3/5 rounded-sm bg-black-900" />
             </div>
           </div>
         ))}
       </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black-950 via-black-950/85 to-transparent"
+        className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-black-950 via-black-950/85 to-transparent"
       />
     </div>
   );
@@ -161,7 +161,7 @@ export default function TopMusic() {
               onChange={(event) =>
                 setMusicType(event.target.value as MusicType)
               }
-              className="appearance-none border-b border-black-600 bg-transparent py-0.5 pr-5 text-base leading-5 text-black-100 outline-none transition hover:border-black-400 focus:border-black-300"
+              className="appearance-none border-b border-black-600 bg-transparent py-0.5 pr-5 text-base leading-5 text-black-100 outline-hidden transition hover:border-black-400 focus:border-black-300"
             >
               {musicTypes.map((item) => (
                 <option key={item.value} value={item.value}>
@@ -183,7 +183,7 @@ export default function TopMusic() {
             id="top-albums-period"
             value={period}
             onChange={(event) => setPeriod(event.target.value as Period)}
-            className="w-full appearance-none rounded-full border border-black-800 bg-black-950 px-3 py-1.5 pr-9 text-sm text-black-50 outline-none transition hover:bg-black-800 focus:border-black-500"
+            className="w-full appearance-none rounded-full border border-black-800 bg-black-950 px-3 py-1.5 pr-9 text-sm text-black-50 outline-hidden transition hover:bg-black-800 focus:border-black-500"
           >
             {periods.map((item) => (
               <option key={item.value} value={item.value}>
@@ -207,7 +207,7 @@ export default function TopMusic() {
             <div
               ref={railRef}
               onScroll={updateScrollIndicators}
-              className="flex w-full min-w-0 max-w-full gap-4 overflow-x-auto scroll-smooth pb-1 pr-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="flex w-full min-w-0 max-w-full gap-4 overflow-x-auto scroll-smooth pb-1 pr-12 scrollbar-none [&::-webkit-scrollbar]:hidden"
             >
               {items.map((item, index) => (
                 <m.a
@@ -252,13 +252,13 @@ export default function TopMusic() {
             </div>
             <div
               aria-hidden="true"
-              className={`pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black-950 via-black-950/85 to-transparent transition-opacity duration-200 ${
+              className={`pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-black-950 via-black-950/85 to-transparent transition-opacity duration-200 ${
                 scrollIndicators.left ? "opacity-100" : "opacity-0"
               }`}
             />
             <div
               aria-hidden="true"
-              className={`pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black-950 via-black-950/85 to-transparent transition-opacity duration-200 ${
+              className={`pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-black-950 via-black-950/85 to-transparent transition-opacity duration-200 ${
                 scrollIndicators.right ? "opacity-100" : "opacity-0"
               }`}
             />

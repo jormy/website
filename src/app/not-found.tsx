@@ -11,7 +11,7 @@ function Error() {
           <span>
             <Link
               href="/"
-              className="rounded-full border border-black-800 bg-black-300/[0.1] px-4 py-2 text-xl transition ease-in hover:bg-black-300/[0.2]"
+              className="rounded-full border border-black-800 bg-black-300/10 px-4 py-2 text-xl transition ease-in hover:bg-black-300/20"
             >
               go back home
               <IoIosArrowForward className="inline" />

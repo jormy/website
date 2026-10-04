@@ -84,13 +84,13 @@ export default function NowPlaying() {
               <div
                 className={clsx([
                   isLastPlayed ? `animate-none` : `animate-spin-slow`,
-                  `relative z-10 flex size-24 flex-shrink-0 items-center justify-center rounded-full border-2 border-black-900/[0.5] bg-[radial-gradient(circle,#000_48%,#2e2e2e_50%,#000_52%)]`,
+                  `relative z-10 flex size-24 shrink-0 items-center justify-center rounded-full border-2 border-black-900/50 bg-[radial-gradient(circle,#000_48%,#2e2e2e_50%,#000_52%)]`,
                 ])}
               >
                 <img
                   src={spotifyData.albumCover}
                   alt={`${spotifyData.album} album art`}
-                  className="size-12 rounded-full border border-black-900/[0.5]"
+                  className="size-12 rounded-full border border-black-900/50"
                 />
               </div>
             </div>

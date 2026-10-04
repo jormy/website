@@ -68,7 +68,7 @@ export default function CommandMenu() {
         value={name}
         className="cursor-pointer"
       >
-        <div className="flex flex-grow items-center rounded-md px-3 py-2 transition hover:bg-black-900/[0.5]">
+        <div className="flex grow items-center rounded-md px-3 py-2 transition hover:bg-black-900/50">
           <div className="mr-3 h-4 w-4 text-black-50">{icon}</div>
           <span className="text-black-200">{name}</span>
         </div>
@@ -136,7 +136,7 @@ export default function CommandMenu() {
   return (
     <>
       <button
-        className="flex size-fit items-center justify-center rounded-full p-2 transition duration-200 hover:bg-black-300/[0.2]"
+        className="flex size-fit items-center justify-center rounded-full p-2 transition duration-200 hover:bg-black-300/20"
         onClick={() => setOpen(true)}
       >
         <MdKeyboardCommandKey className="text-xl" />
@@ -146,7 +146,7 @@ export default function CommandMenu() {
           <AnimatePresence initial={false} mode="wait">
             {open && (
               <m.div
-                className="fixed inset-0 z-[100] flex items-center justify-center bg-black-950/[0.5] p-4 backdrop-blur-sm"
+                className="fixed inset-0 z-100 flex items-center justify-center bg-black-950/50 p-4 backdrop-blur-xs"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -163,7 +163,7 @@ export default function CommandMenu() {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Command
-                    className={`${sfPro.className} z-50 w-[90vw] max-w-[32rem] rounded-xl`}
+                    className={`${sfPro.className} z-50 w-[90vw] max-w-lg rounded-xl`}
                   >
                     <GradientCard>
                       <div className="mb-4 flex items-center border-b border-black-700 pb-4 pt-1">
@@ -173,14 +173,14 @@ export default function CommandMenu() {
                           value={value}
                           onValueChange={setValue}
                           placeholder="Type a command or search..."
-                          className="flex-grow bg-transparent focus:outline-none"
+                          className="grow bg-transparent focus:outline-hidden"
                         />
                       </div>
                       <Command.List className="max-h-[300px] overflow-y-auto">
                         <Command.Empty className="py-6 text-center text-sm">
                           No results found.
                         </Command.Empty>
-                        <div className="space-y-2 divide-y divide-black-900/[0.5]">
+                        <div className="space-y-2 divide-y divide-black-900/50">
                           {Object.entries(commands).map(([group, items]) => (
                             <Command.Group
                               key={group}

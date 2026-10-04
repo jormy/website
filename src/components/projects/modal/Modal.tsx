@@ -22,7 +22,7 @@ function Backdrop({
 }) {
   return (
     <m.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black-950/[0.5] backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black-950/50 backdrop-blur-xs"
       onClick={onClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

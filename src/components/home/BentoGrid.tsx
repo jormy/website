@@ -76,7 +76,7 @@ export default function BentoGrid() {
           </m.div>
 
           <m.div variants={cardVariants} className="min-w-0">
-            <Tools />
+            <TechStack />
           </m.div>
         </m.div>
 
@@ -91,7 +91,7 @@ export default function BentoGrid() {
           </m.div>
 
           <m.div variants={cardVariants} className="min-w-0">
-            <TechStack />
+            <Tools />
           </m.div>
         </m.div>
       </m.div>
@@ -105,10 +105,6 @@ export default function BentoGrid() {
         <m.div variants={cardVariants}>
           <Projects />
         </m.div>
-
-        {/* <m.div variants={cardVariants}>
-          <Weather />
-        </m.div> */}
       </m.div>
     </div>
   );

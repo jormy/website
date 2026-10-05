@@ -1,6 +1,5 @@
 <p align="center">
   <img alt="" src="public/images/mockup.webp"/>
-  <img alt="" src="public/images/mockup-projects.webp"/>
 </p>
 
 <h1 align="center">
@@ -14,7 +13,7 @@
 </p>
 
 <p align="center">
-my personal site, rewritten for the third time.
+my personal site, rewritten for the ~~third~~ fourth time.
 </p>
 
 ## Tech Stack
@@ -23,3 +22,7 @@ my personal site, rewritten for the third time.
 - Styling - [TailwindCSS](https://tailwindcss.com/)
 - Animation - [Framer Motion](https://framer.com/motion/)
 - Deployment - [Vercel](https://vercel.com/)
+
+<p align="center">
+  <img alt="" src="public/images/mockup-projects.webp"/>
+</p>

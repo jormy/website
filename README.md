@@ -1,5 +1,6 @@
 <p align="center">
   <img alt="" src="public/images/mockup.webp"/>
+  <img alt="" src="public/images/mockup-projects.webp"/>
 </p>
 
 <h1 align="center">

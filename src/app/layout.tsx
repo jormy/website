@@ -22,17 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="absolute inset-0 min-h-screen w-screen overflow-auto bg-black-950">
+      <body className="absolute inset-0 min-h-screen w-full overflow-auto bg-black-950">
         <Image
           width={1512}
           height={550}
-          className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 select-none"
+          className="absolute left-1/2 top-0 -z-10 h-auto w-full max-w-[1512px] -translate-x-1/2 select-none"
           src="/images/ui/bg-gradient.png"
           alt=""
           priority
         />
         <div
-          className={`${sfPro.className} mx-auto flex min-h-screen w-screen max-w-4xl flex-col px-8 py-10 text-black-200`}
+          className={`${sfPro.className} mx-auto flex min-h-screen w-full max-w-4xl flex-col px-8 py-10 text-black-200`}
         >
           <Navbar />
           <div className="grow py-16 sm:py-24">{children}</div>

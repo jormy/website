@@ -128,9 +128,9 @@ export default function Navbar() {
             projects
           </NavLink>
 
-          <NavLink setPosition={setPosition} href="/contact">
+          {/*<NavLink setPosition={setPosition} href="/contact">
             contact
-          </NavLink>
+          </NavLink>*/}
 
           <LinkBg position={position} />
         </nav>

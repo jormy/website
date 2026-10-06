@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  [jorm.vercel.app](https://jorm.vercel.app)
+  <a href="https://jorm.vercell.app">jorm.vercel.app</a>
 </h1>
 
 <p align="center">
@@ -18,7 +18,7 @@ my personal portfolio showcasing my projects, interests, 3D designs, experiments
 
 ## Features
 
-- Music integration — Shows currently listening to (or last played) song through Spotify, alongside listening stats from Last.fm.
+- Music integration - Shows currently listening to (or last played) song through Spotify, alongside listening stats from Last.fm.
 
 - Discord presence - Shows my current Discord status, including online, idle, DND, and offline states via Lanyard API.
 
@@ -46,4 +46,5 @@ This site is a refresh of the personal website I originally built when I was 14.
 <p align="center">
   <h2>Showcase Video</h2>
 
+https://github.com/user-attachments/assets/b37815d7-ab4b-4c2f-bfd2-c9404fbeca88
 </p>

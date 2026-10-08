@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  <a href="https://jorm.vercell.app">jorm.vercel.app</a>
+  <a href="https://jorm.lol">jorm.lol</a>
 </h1>
 
 <p align="center">

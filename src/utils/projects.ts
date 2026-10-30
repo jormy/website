@@ -11,6 +11,13 @@ export type Project = {
 export const projects: Record<Category, Project[]> = {
   code: [
     {
+      name: "image-watermarker",
+      descr: "batch image watermarking tool with a buncha customisation",
+      link: "https://watermark.jorm.lol/",
+      repo: "https://github.com/jormy/image-watermarker",
+      img: "/images/projects/code/image-watermarker.webp",
+    },
+    {
       name: "btd6-viewer",
       descr: "WIP site to display information such as events and challenges",
       link: "https://btd6.vercel.app/",
